@@ -1,10 +1,11 @@
-[gd_scene load_steps=101 format=3 uid="uid://potr8w0bcnms"]
+[gd_scene load_steps=103 format=3 uid="uid://potr8w0bcnms"]
 
 [ext_resource type="PackedScene" uid="uid://2go8h24o332j" path="res://player.tscn" id="1_n0l67"]
 [ext_resource type="Texture2D" uid="uid://d0sgxlpvclq2f" path="res://Assets/wall02.png" id="1_tqtok"]
 [ext_resource type="PackedScene" uid="uid://c148d14s7v1ey" path="res://enemy.tscn" id="2_kofwd"]
 [ext_resource type="Texture2D" uid="uid://5ff0wb3io3qn" path="res://Assets/floor01.png" id="2_w5bbt"]
 [ext_resource type="Texture2D" uid="uid://fenayvtso5vp" path="res://Assets/barrel.png" id="3_t0ge4"]
+[ext_resource type="Texture2D" uid="uid://blp7jntmhgpj0" path="res://table texture.png" id="4_6dd86"]
 [ext_resource type="Texture2D" uid="uid://dgq6ty2gstp4g" path="res://Assets/table texture.png" id="4_filc5"]
 [ext_resource type="Texture2D" uid="uid://b42hryby3ja1v" path="res://Assets/wall01.png" id="5_164vd"]
 [ext_resource type="Texture2D" uid="uid://cjq2mva5xfj4p" path="res://Assets/window.png" id="6_8d5io"]
@@ -41,10 +42,11 @@ albedo_color = Color(0.270588, 0.156863, 0.235294, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uvt37"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrmq7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_euriy"]
 transparency = 1
-albedo_texture = ExtResource("4_filc5")
+albedo_texture = ExtResource("4_6dd86")
 texture_filter = 0
+texture_repeat = false
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_14m2o"]
 
@@ -187,6 +189,11 @@ albedo_texture = ExtResource("1_tqtok")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77nki"]
 albedo_texture = ExtResource("1_tqtok")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrmq7"]
+transparency = 1
+albedo_texture = ExtResource("4_filc5")
+texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_de7w3"]
 albedo_texture = ExtResource("1_tqtok")
@@ -334,6 +341,7 @@ billboard = 2
 texture = ExtResource("3_t0ge4")
 
 [node name="Table" type="Node3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/Table"]
 transform = Transform3D(2, 0, 0, 0, 0.25, 0, 0, 0, 2, 0, 1, 0)
@@ -369,7 +377,7 @@ shape = SubResource("BoxShape3D_uvt37")
 
 [node name="Table 2" type="MeshInstance3D" parent="Environment"]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 4, 0.2, 0)
-material_override = SubResource("StandardMaterial3D_vrmq7")
+material_override = SubResource("StandardMaterial3D_euriy")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
 
@@ -3913,6 +3921,12 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 14.7278)
 
 [node name="Enemy" parent="." instance=ExtResource("2_kofwd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="Enemy2" parent="." instance=ExtResource("2_kofwd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -4)
+
+[node name="Enemy3" parent="." instance=ExtResource("2_kofwd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -8)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
