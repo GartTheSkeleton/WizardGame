@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://lbpmboienr1g"]
+
+[ext_resource type="Script" path="res://missile.gd" id="1_3s4xu"]
+[ext_resource type="Texture2D" uid="uid://5xvd3tc3ki7m" path="res://Assets/arcane missile.png" id="2_d5m8x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rp50"]
+atlas = ExtResource("2_d5m8x")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlew3"]
+atlas = ExtResource("2_d5m8x")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie6la"]
+atlas = ExtResource("2_d5m8x")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6bs74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rp50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlew3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie6la")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ktedk"]
+
+[node name="Missile" type="Node3D"]
+script = ExtResource("1_3s4xu")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.210291, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_6bs74")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.156982
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+visible = false
+mesh = SubResource("BoxMesh_ktedk")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -1)
+collision_mask = 3
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(0.235294, 1, 1, 1)

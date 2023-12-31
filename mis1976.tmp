@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://lbpmboienr1g"]
+
+[ext_resource type="Script" path="res://missile.gd" id="1_3s4xu"]
+[ext_resource type="Texture2D" uid="uid://5xvd3tc3ki7m" path="res://arcane missile.png" id="2_abg4g"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c253j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rp50"]
+atlas = ExtResource("2_abg4g")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlew3"]
+atlas = ExtResource("2_abg4g")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ie6la"]
+atlas = ExtResource("2_abg4g")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6bs74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4rp50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlew3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ie6la")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Missile" type="StaticBody3D"]
+script = ExtResource("1_3s4xu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+shape = SubResource("BoxShape3D_c253j")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.210291, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_6bs74")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.968759
