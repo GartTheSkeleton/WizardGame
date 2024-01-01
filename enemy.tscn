@@ -1,50 +1,64 @@
-[gd_scene load_steps=17 format=3 uid="uid://c148d14s7v1ey"]
+[gd_scene load_steps=20 format=3 uid="uid://c148d14s7v1ey"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_2ftgn"]
 [ext_resource type="AudioStream" uid="uid://qxfjnbqrobwf" path="res://monster_die.wav" id="2_7xj8c"]
-[ext_resource type="Texture2D" uid="uid://b3g0bhpt4v4tk" path="res://Assets/lowreswiz.png" id="2_8fybn"]
-[ext_resource type="Texture2D" uid="uid://mkjo45n6san4" path="res://spider.png" id="3_yqowj"]
+[ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://spider.png" id="3_yqowj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_afoyd"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f2cng"]
+load_path = "res://.godot/imported/spider.png-96ad53aa9f5886aa5f95b126fb3f9337.s3tc.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_wl1bi"]
-atlas = ExtResource("3_yqowj")
+atlas = SubResource("CompressedTexture2D_f2cng")
 region = Rect2(0, 256, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6e4j"]
-atlas = ExtResource("3_yqowj")
+atlas = SubResource("CompressedTexture2D_f2cng")
 region = Rect2(256, 256, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ajt8"]
-atlas = ExtResource("3_yqowj")
+atlas = SubResource("CompressedTexture2D_f2cng")
 region = Rect2(512, 256, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cvjnf"]
-atlas = ExtResource("3_yqowj")
+atlas = SubResource("CompressedTexture2D_f2cng")
 region = Rect2(768, 256, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rcbfg"]
-atlas = ExtResource("2_8fybn")
-region = Rect2(512, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eeg3"]
+atlas = ExtResource("3_yqowj")
+region = Rect2(0, 512, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rcct6"]
-atlas = ExtResource("2_8fybn")
-region = Rect2(768, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_m55v8"]
+atlas = ExtResource("3_yqowj")
+region = Rect2(256, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s6c0"]
+atlas = ExtResource("3_yqowj")
+region = Rect2(512, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m6nni"]
+atlas = ExtResource("3_yqowj")
+region = Rect2(0, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt1o8"]
+atlas = ExtResource("3_yqowj")
+region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_78g2g"]
-atlas = ExtResource("3_yqowj")
+atlas = SubResource("CompressedTexture2D_f2cng")
 region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgrfx"]
-atlas = ExtResource("3_yqowj")
+atlas = SubResource("CompressedTexture2D_f2cng")
 region = Rect2(256, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7l7a7"]
-atlas = ExtResource("3_yqowj")
+atlas = SubResource("CompressedTexture2D_f2cng")
 region = Rect2(512, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h7a1p"]
-atlas = ExtResource("3_yqowj")
+atlas = SubResource("CompressedTexture2D_f2cng")
 region = Rect2(768, 0, 256, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u8br5"]
@@ -68,14 +82,28 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rcbfg")
+"texture": SubResource("AtlasTexture_5eeg3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rcct6")
+"texture": SubResource("AtlasTexture_m55v8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0s6c0")
 }],
 "loop": false,
-"name": &"deathdown",
+"name": &"death",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m6nni")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt1o8")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -91,7 +119,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_h7a1p")
 }],
 "loop": true,
-"name": &"idledown",
+"name": &"idle",
 "speed": 8.0
 }]
 
@@ -110,8 +138,8 @@ pixel_size = 0.009
 billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_u8br5")
-animation = &"attacking"
-autoplay = "idledown"
+animation = &"hurt"
+autoplay = "idle"
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_7xj8c")

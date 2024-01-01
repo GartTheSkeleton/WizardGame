@@ -185,7 +185,7 @@ func shoot():
 			animated_sprite_2d.play("missile cast")
 			last_spell = curr_spell
 			
-			spawn_missile()
+			arcane_shot()
 			
 			#if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("is_enemy"):
 			#	target_enemy = ray_cast_3d.get_collider()
@@ -216,10 +216,19 @@ func kill():
 	$CanvasLayer/DeathScreen.show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
+func arcane_shot(): #spawns an Arcane Shot
+	await get_tree().create_timer(0.5).timeout
+	spell = arcane_missile.instantiate()
+	spell.type = 0
+	spell.position = ray_cast_3d.global_position
+	spell.transform.basis = ray_cast_3d.global_transform.basis
+	get_parent().add_child(spell)
+
 	
 func spawn_missile(): #spawns an Arcane Missile
 	await get_tree().create_timer(0.5).timeout
 	spell = arcane_missile.instantiate()
+	spell.type = 1
 	spell.position = ray_cast_3d.global_position
 	spell.transform.basis = ray_cast_3d.global_transform.basis
 	get_parent().add_child(spell)

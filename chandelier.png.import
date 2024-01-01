@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmqdoex2fgx0v"
-path.s3tc="res://.godot/imported/spider.png-96ad53aa9f5886aa5f95b126fb3f9337.s3tc.ctex"
+uid="uid://oismw60cslvw"
+path.s3tc="res://.godot/imported/chandelier.png-4867fe9b0d12922d345314481ff65511.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://spider.png"
-dest_files=["res://.godot/imported/spider.png-96ad53aa9f5886aa5f95b126fb3f9337.s3tc.ctex"]
+source_file="res://chandelier.png"
+dest_files=["res://.godot/imported/chandelier.png-4867fe9b0d12922d345314481ff65511.s3tc.ctex"]
 
 [params]
 

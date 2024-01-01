@@ -1,30 +1,44 @@
 extends Node3D
 
-const SPEED = 40
+var SPEED = 40
+var type = 0
+var dead = false
 
 @onready var mesh = $MeshInstance3D
 @onready var ray = $RayCast3D
+@onready var animated_sprite = $AnimatedSprite3D
 
 func _ready():
-	pass
+	animated_sprite.animation_finished.connect(anim_end) 
+	match type:
+		0:
+			SPEED = 80
+			ray.target_position.z = -2
+		1:
+			SPEED = 40
+		
 	
 func _physics_process(delta):
-	position += transform.basis * Vector3(0,0,-SPEED) * delta
-	
-	if ray.is_colliding():
+	if !dead:
+		if ray.is_colliding():
+			
+			animated_sprite.play("pop")
+			dead = true
+			
+			if ray.get_collider().has_method("kill"):
+				if ray.get_collider().hp > 0:
+					ray.get_collider().hp -= 1
+					ray.get_collider().hurt = true
+					ray.get_collider().hurt_timer = 10
+					ray.get_collider().dir = ray.get_collider().global_position - global_position
+					ray.get_collider().dir.y = 0.0
+				else:
+					ray.get_collider().kill()
+			
+			print("Bullet has died")
+		else:
+			position += transform.basis * Vector3(0,0,-SPEED) * delta
 		
-		if ray.get_collider().has_method("kill"):
-			if ray.get_collider().hp > 0:
-				ray.get_collider().hp -= 1
-				ray.get_collider().hurt = true
-				ray.get_collider().hurt_timer = 10
-				ray.get_collider().dir = ray.get_collider().global_position - global_position
-				ray.get_collider().dir.y = 0.0
-			else:
-				ray.get_collider().kill()
-		
-		print(ray.get_collider())
-		
-		print("OOPS I DIED UWU")
-		
+func anim_end():
+	if dead:
 		queue_free()

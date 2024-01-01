@@ -46,6 +46,7 @@ func _physics_process(delta):
 			
 	if hurt == true:
 		print("I, AN ENEMY, HAVE BEEN HURT")
+		animated_sprite_3d.play("hurt")
 		dir = dir.normalized()
 		velocity = dir * move_speed
 		move_and_slide()
@@ -107,12 +108,12 @@ func attempt_to_kill_player():
 func kill():
 	dead = true
 	$DeathSound.play()
-	animated_sprite_3d.play("deathdown")
+	animated_sprite_3d.play("death")
 	$CollisionShape3D.disabled = true
 
 func anim_done():
 	if !dead:
-		animated_sprite_3d.play("idledown")
+		animated_sprite_3d.play("idle")
 
 # Function to get the distance between the "Enemy" and "Player" nodes
 func getDistanceToPlayer():
