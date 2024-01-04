@@ -1,10 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://c148d14s7v1ey"]
+[gd_scene load_steps=20 format=3 uid="uid://lugyetjhn7fn"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_2ftgn"]
-[ext_resource type="AudioStream" uid="uid://qxfjnbqrobwf" path="res://monster_die.wav" id="2_7xj8c"]
-[ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://spider.png" id="3_yqowj"]
+[ext_resource type="Script" path="res://spider.gd" id="1_exswc"]
+[ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://spider.png" id="2_kxwho"]
+[ext_resource type="PackedScene" uid="uid://lda1fr4p262a" path="res://caster.tscn" id="3_bdf5g"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_afoyd"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0by5f"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f2cng"]
 load_path = "res://.godot/imported/spider.png-96ad53aa9f5886aa5f95b126fb3f9337.s3tc.ctex"
@@ -26,23 +26,23 @@ atlas = SubResource("CompressedTexture2D_f2cng")
 region = Rect2(768, 256, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5eeg3"]
-atlas = ExtResource("3_yqowj")
+atlas = ExtResource("2_kxwho")
 region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m55v8"]
-atlas = ExtResource("3_yqowj")
+atlas = ExtResource("2_kxwho")
 region = Rect2(256, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0s6c0"]
-atlas = ExtResource("3_yqowj")
+atlas = ExtResource("2_kxwho")
 region = Rect2(512, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6nni"]
-atlas = ExtResource("3_yqowj")
+atlas = ExtResource("2_kxwho")
 region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bt1o8"]
-atlas = ExtResource("3_yqowj")
+atlas = ExtResource("2_kxwho")
 region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_78g2g"]
@@ -61,7 +61,7 @@ region = Rect2(512, 0, 256, 256)
 atlas = SubResource("CompressedTexture2D_f2cng")
 region = Rect2(768, 0, 256, 256)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_u8br5"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qwdqb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -123,29 +123,22 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
-collision_layer = 2
-collision_mask = 3
-script = ExtResource("1_2ftgn")
+[node name="Node3D" type="CharacterBody3D"]
+script = ExtResource("1_exswc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_afoyd")
+shape = SubResource("CapsuleShape3D_0by5f")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15512, 0)
 pixel_size = 0.009
 billboard = 2
 texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_u8br5")
+sprite_frames = SubResource("SpriteFrames_qwdqb")
 animation = &"hurt"
 autoplay = "idle"
 
-[node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("2_7xj8c")
-unit_size = 2.0
-bus = &"Sfx"
-
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 1, 0)
-top_level = true
+
+[node name="Node3D" parent="." instance=ExtResource("3_bdf5g")]

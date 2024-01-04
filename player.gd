@@ -142,6 +142,7 @@ func _physics_process(delta):
 	#check if we're hurt
 	if hurt:
 		print("I, THE PLAYER, HAVE BEEN HURT")
+		print(hurt_timer)
 		velocity = dir * SPEED
 		move_and_slide()
 		hurt_timer -= 1

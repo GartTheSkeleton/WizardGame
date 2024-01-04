@@ -1,12 +1,14 @@
 extends CharacterBody3D
 
+class_name Enemy
 
 @onready var animated_sprite_3d = $AnimatedSprite3D
 
-@export var move_speed = 2.0
+@export var move_speed = 3
 @export var attack_range = 2.0
 
 @onready var player : CharacterBody3D = get_tree().get_first_node_in_group("player")
+@onready var ray_cast = $RayCast3D
 
 var dead = false
 var range = 20
@@ -19,19 +21,22 @@ var angle_to_player = 0
 var sees_player = false
 var dir
 var ai_state = "idle"
+var type = 0
+var aggro_radius = 1.5
+var attacked = false
 
 func _ready():
 	animated_sprite_3d.animation_finished.connect(anim_done) 
 	
-	dir = player.global_position - global_position
+	dir = Vector3(0,0,0)
 	
 	dir.y = 0.0
 	dir = dir.normalized()
-	velocity = dir * move_speed
-
-func _process(delta):
+	velocity = dir * 1
 	
-	pass
+#func _process(delta):
+#
+#	pass
 
 func _physics_process(delta):
 	if dead:
@@ -66,54 +71,41 @@ func _physics_process(delta):
 		var player_pos_diff_z = position.z-player.position.z
 		
 	else:
-		velocity = dir * move_speed * 0
+		velocity = Vector3(0,0,0)
 	
-	move_and_slide()
-	attempt_to_kill_player()
+	if ai_state == "chasing":
+		move_and_slide()
+	attack_player()
 
-func attempt_to_kill_player():
+func attack_player():
 	
 	match ai_state:
 		"idle":
+			if attacked == true:
+				attacked = false
 			if active == true:
 				ai_state = "chasing"
 
 		"chasing":
 			var dist_to_player = global_position.distance_to(player.global_position)
 			
-			if dist_to_player <= 1.5:
+			if dist_to_player < aggro_radius:
 				ai_state = "attacking"
 				animated_sprite_3d.play("attacking")
-				
-		
+
 		"attacking":
 			var dist_to_player = global_position.distance_to(player.global_position)
-			
-			var eye_line = Vector3.UP * 1.5
-			var query = PhysicsRayQueryParameters3D.create(global_position+eye_line, player.global_position+eye_line,1)
-			var result = get_world_3d().direct_space_state.intersect_ray(query)
-			await get_tree().create_timer(0.3).timeout
-			if result.is_empty() and player.hurt == false:
-				if player.hp > 0:
-					player.hp -= 5
-					player.hurt = true
-					player.hurt_timer = 12
-					player.dir = player.global_position - global_position
-					player.dir.y = 0.0
-				else:
-					player.kill()
-			ai_state = "idle"
-			
+
 
 func kill():
 	dead = true
-	$DeathSound.play()
 	animated_sprite_3d.play("death")
 	$CollisionShape3D.disabled = true
 
 func anim_done():
 	if !dead:
 		animated_sprite_3d.play("idle")
+		ai_state = "idle"
 
 # Function to get the distance between the "Enemy" and "Player" nodes
 func getDistanceToPlayer():
@@ -133,3 +125,4 @@ func getDistanceToPlayer():
 
 func is_enemy():
 	print("I'ma enemy")
+

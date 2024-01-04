@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://2go8h24o332j" path="res://player.tscn" id="1_n0l67"]
 [ext_resource type="Texture2D" uid="uid://d0sgxlpvclq2f" path="res://Assets/wall02.png" id="1_tqtok"]
-[ext_resource type="PackedScene" uid="uid://c148d14s7v1ey" path="res://enemy.tscn" id="2_kofwd"]
 [ext_resource type="Texture2D" uid="uid://5ff0wb3io3qn" path="res://Assets/floor01.png" id="2_w5bbt"]
 [ext_resource type="Texture2D" uid="uid://fenayvtso5vp" path="res://Assets/barrel.png" id="3_t0ge4"]
 [ext_resource type="Texture2D" uid="uid://blp7jntmhgpj0" path="res://table texture.png" id="4_6dd86"]
@@ -10,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://oismw60cslvw" path="res://chandelier.png" id="4_obrdv"]
 [ext_resource type="Texture2D" uid="uid://b42hryby3ja1v" path="res://Assets/wall01.png" id="5_164vd"]
 [ext_resource type="Texture2D" uid="uid://cjq2mva5xfj4p" path="res://Assets/window.png" id="6_8d5io"]
+[ext_resource type="PackedScene" uid="uid://lda1fr4p262a" path="res://caster.tscn" id="11_ytyhw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mluaj"]
 
@@ -842,7 +842,7 @@ skeleton = NodePath("../../Environment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block357" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7, 7, 14)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9, 7, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../Environment")
@@ -930,7 +930,7 @@ skeleton = NodePath("../../Environment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block354" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7, 5, 14)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9, 5, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../Environment")
@@ -1556,7 +1556,7 @@ skeleton = NodePath("../../Environment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block95" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7, 1, 14)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9, 1, 12)
 material_override = SubResource("StandardMaterial3D_86s2q")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../Environment")
@@ -1589,7 +1589,7 @@ skeleton = NodePath("../../Environment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block98" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 7, 3, 14)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 9, 3, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../Environment")
@@ -2917,7 +2917,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block129" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 5, 1, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 19, 1, 12)
 material_override = SubResource("StandardMaterial3D_jeywk")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -2928,7 +2928,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block130" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 3, 1, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 17, 1, 12)
 material_override = SubResource("StandardMaterial3D_n84ce")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -2939,7 +2939,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block131" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 3, 3, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 17, 3, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -2950,7 +2950,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block132" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 5, 3, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 19, 3, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3192,7 +3192,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block133" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 1, 1, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 15, 1, 12)
 material_override = SubResource("StandardMaterial3D_h0rd1")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3203,7 +3203,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block134" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -1, 1, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 13, 1, 12)
 material_override = SubResource("StandardMaterial3D_8cyi0")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3214,7 +3214,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block135" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -1, 3, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 13, 3, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3222,10 +3222,11 @@ skeleton = NodePath("../../WorldEnvironment")
 [node name="StaticBody3D" type="StaticBody3D" parent="First Floor Blocks/Block135"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="First Floor Blocks/Block135/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0500002, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block136" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 1, 3, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 15, 3, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3236,7 +3237,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block137" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3, 1, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 11, 1, 12)
 material_override = SubResource("StandardMaterial3D_nrrba")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3269,7 +3270,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block140" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -3, 3, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, 11, 3, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3291,7 +3292,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block142" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -9, 1, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -9, 1, 12)
 material_override = SubResource("StandardMaterial3D_77nki")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3302,7 +3303,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block143" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -9, 3, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -9, 3, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3360,7 +3361,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block145" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -11, 1, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -11, 1, 12)
 material_override = SubResource("StandardMaterial3D_de7w3")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3371,7 +3372,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block146" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -13, 1, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -13, 1, 12)
 material_override = SubResource("StandardMaterial3D_t3u8v")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3379,10 +3380,11 @@ skeleton = NodePath("../../WorldEnvironment")
 [node name="StaticBody3D" type="StaticBody3D" parent="First Floor Blocks/Block146"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="First Floor Blocks/Block146/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -4.76837e-07)
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block147" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -13, 3, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -13, 3, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3393,7 +3395,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block148" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -11, 3, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -11, 3, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3404,7 +3406,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block149" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -15, 1, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -15, 1, 12)
 material_override = SubResource("StandardMaterial3D_rf5rf")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3415,7 +3417,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block150" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -17, 1, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -17, 1, 12)
 material_override = SubResource("StandardMaterial3D_kyf3h")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3426,7 +3428,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block151" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -17, 3, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -17, 3, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3437,7 +3439,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block152" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -15, 3, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -15, 3, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3778,7 +3780,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block260" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -9, 5, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -9, 5, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3789,7 +3791,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block261" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -13, 5, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -13, 5, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3800,7 +3802,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block262" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -11, 5, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -11, 5, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3811,7 +3813,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block263" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -17, 5, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -17, 5, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -3822,7 +3824,7 @@ skeleton = NodePath("../../WorldEnvironment")
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
 [node name="Block264" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -15, 5, 26)
+transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -15, 5, 12)
 material_override = SubResource("StandardMaterial3D_4ui0e")
 mesh = SubResource("BoxMesh_y2ikd")
 skeleton = NodePath("../../WorldEnvironment")
@@ -4390,15 +4392,12 @@ transform = Transform3D(0.810512, 0.337002, -0.479061, 0, 0.817899, 0.575362, 0.
 shadow_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_n0l67")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 14.7278)
-
-[node name="Enemy" parent="." instance=ExtResource("2_kofwd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
-
-[node name="Enemy2" parent="." instance=ExtResource("2_kofwd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -4)
-
-[node name="Enemy3" parent="." instance=ExtResource("2_kofwd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 18.7278)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+
+[node name="Node3D2" parent="." instance=ExtResource("11_ytyhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -9)
+
+[node name="Node3D" parent="." instance=ExtResource("11_ytyhw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.06821, -14)
