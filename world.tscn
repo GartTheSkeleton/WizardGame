@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://potr8w0bcnms"]
+[gd_scene load_steps=105 format=3 uid="uid://potr8w0bcnms"]
 
 [ext_resource type="PackedScene" uid="uid://2go8h24o332j" path="res://player.tscn" id="1_n0l67"]
 [ext_resource type="Texture2D" uid="uid://d0sgxlpvclq2f" path="res://Assets/wall02.png" id="1_tqtok"]
@@ -192,13 +192,6 @@ albedo_texture = ExtResource("1_tqtok")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77nki"]
 albedo_texture = ExtResource("1_tqtok")
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6ogfu"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrmq7"]
-transparency = 1
-albedo_texture = SubResource("CompressedTexture2D_6ogfu")
-texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_de7w3"]
 albedo_texture = ExtResource("1_tqtok")
@@ -3339,20 +3332,6 @@ skeleton = NodePath("../../WorldEnvironment")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="First Floor Blocks/Block280/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_5lueg")
 
-[node name="Block318" type="MeshInstance3D" parent="First Floor Blocks"]
-transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -44, 1, 39)
-material_override = SubResource("StandardMaterial3D_vrmq7")
-mesh = SubResource("BoxMesh_y2ikd")
-skeleton = NodePath("../../WorldEnvironment")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="First Floor Blocks/Block318"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="First Floor Blocks/Block318/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_5lueg")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="First Floor Blocks/Block318/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_5lueg")
-
 [node name="Block144" type="MeshInstance3D" parent="First Floor Blocks"]
 transform = Transform3D(-8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -7, 3, 26)
 material_override = SubResource("StandardMaterial3D_4ui0e")
@@ -4443,11 +4422,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -15)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.216231, 5, -46.6639)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 7.98377, 2.9, 4.1037)
+transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 7.98377, 3.01104, 3.9952)
 texture_filter = 0
 texture = ExtResource("12_qlalc")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 5.98377, 2.9, 4.1037)
+transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 5.98377, 3.01104, 3.9952)
 texture_filter = 0
 texture = ExtResource("12_qlalc")

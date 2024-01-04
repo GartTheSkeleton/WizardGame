@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://2go8h24o332j"]
+[gd_scene load_steps=75 format=3 uid="uid://2go8h24o332j"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_kvxj2"]
 [ext_resource type="Texture2D" uid="uid://5kx1fe8i7rqw" path="res://Assets/WizardHands Sheet.png" id="2_805pc"]
@@ -557,6 +557,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_ul0oy"]
+font_size = 39
+
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
 collision_mask = 3
@@ -681,6 +684,17 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 105.0
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_right = 5.0
+offset_bottom = -108.0
+text = "Scroll or press 1 and 2 to toggle attacks.
+Shift to sprint short distances."
+label_settings = SubResource("LabelSettings_ul0oy")
+horizontal_alignment = 1
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_f5mhc")

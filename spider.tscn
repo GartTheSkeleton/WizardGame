@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/spider.gd" id="1_k6afp"]
 [ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://Assets/spider.png" id="2_b80hp"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0by5f"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_eati7"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f2cng"]
 load_path = "res://.godot/imported/spider.png-96ad53aa9f5886aa5f95b126fb3f9337.s3tc.ctex"
@@ -126,8 +126,8 @@ animations = [{
 script = ExtResource("1_k6afp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_0by5f")
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+shape = SubResource("SphereShape3D_eati7")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15512, 0)

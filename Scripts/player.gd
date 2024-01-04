@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var shoot_sound = $ShootSound
 @onready var health_bar = $CanvasLayer/UI/Label
 @onready var camera = $Camera3D
+@onready var tutorial = $CanvasLayer/Label
 
 #call variables
 const SPEED = 6.0
@@ -44,6 +45,7 @@ var dir = Vector3(0,0,0)
 #preloading the spell objects
 var arcane_missile = preload("res://missile.tscn")
 
+var tutorial_counter = 300
 
 func _ready():
 	#turn on captured mouse mode
@@ -245,6 +247,10 @@ func burst_shot(): #Burst Shot of Arcane Missiles
 
 func update_ui(): #UI Logic
 	health_bar.text = str(hp)
+	
+	tutorial_counter -= 1
+	if tutorial_counter <= 0:
+		tutorial.visible = false
 	
 func is_player(): #Player identification method
 	print("I'm the player!")
