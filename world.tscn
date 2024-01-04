@@ -4,11 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://d0sgxlpvclq2f" path="res://Assets/wall02.png" id="1_tqtok"]
 [ext_resource type="Texture2D" uid="uid://5ff0wb3io3qn" path="res://Assets/floor01.png" id="2_w5bbt"]
 [ext_resource type="Texture2D" uid="uid://fenayvtso5vp" path="res://Assets/barrel.png" id="3_t0ge4"]
-[ext_resource type="Texture2D" uid="uid://blp7jntmhgpj0" path="res://table texture.png" id="4_6dd86"]
-[ext_resource type="Texture2D" uid="uid://dgq6ty2gstp4g" path="res://Assets/table texture.png" id="4_filc5"]
-[ext_resource type="Texture2D" uid="uid://oismw60cslvw" path="res://chandelier.png" id="4_obrdv"]
+[ext_resource type="Texture2D" uid="uid://blp7jntmhgpj0" path="res://Assets/table texture.png" id="4_filc5"]
 [ext_resource type="Texture2D" uid="uid://b42hryby3ja1v" path="res://Assets/wall01.png" id="5_164vd"]
 [ext_resource type="Texture2D" uid="uid://cjq2mva5xfj4p" path="res://Assets/window.png" id="6_8d5io"]
+[ext_resource type="Texture2D" uid="uid://oismw60cslvw" path="res://Assets/chandelier.png" id="7_tc8w0"]
 [ext_resource type="PackedScene" uid="uid://lda1fr4p262a" path="res://caster.tscn" id="11_ytyhw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mluaj"]
@@ -45,7 +44,7 @@ albedo_color = Color(0.270588, 0.156863, 0.235294, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_euriy"]
 transparency = 1
-albedo_texture = ExtResource("4_6dd86")
+albedo_texture = ExtResource("4_filc5")
 texture_filter = 0
 texture_repeat = false
 
@@ -191,9 +190,11 @@ albedo_texture = ExtResource("1_tqtok")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_77nki"]
 albedo_texture = ExtResource("1_tqtok")
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6ogfu"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrmq7"]
 transparency = 1
-albedo_texture = ExtResource("4_filc5")
+albedo_texture = SubResource("CompressedTexture2D_6ogfu")
 texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_de7w3"]
@@ -408,7 +409,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 8)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 billboard = 2
 texture_filter = 0
-texture = ExtResource("4_obrdv")
+texture = ExtResource("7_tc8w0")
 
 [node name="First Floor Blocks" type="Node3D" parent="."]
 

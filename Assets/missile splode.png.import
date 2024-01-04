@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c70ul82wuwcnq"
-path.s3tc="res://.godot/imported/missile splode.png-358c5e430569cb899a25ac97ada9af6d.s3tc.ctex"
+path.s3tc="res://.godot/imported/missile splode.png-d15496dd4c4cf25f7a502de81361fa5a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://missile splode.png"
-dest_files=["res://.godot/imported/missile splode.png-358c5e430569cb899a25ac97ada9af6d.s3tc.ctex"]
+source_file="res://Assets/missile splode.png"
+dest_files=["res://.godot/imported/missile splode.png-d15496dd4c4cf25f7a502de81361fa5a.s3tc.ctex"]
 
 [params]
 

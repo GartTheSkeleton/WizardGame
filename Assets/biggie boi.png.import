@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blp7jntmhgpj0"
-path.s3tc="res://.godot/imported/table texture.png-99eadc2ed27bbfff4462650e5487cf8a.s3tc.ctex"
+uid="uid://dr0vhivfotb7x"
+path.s3tc="res://.godot/imported/biggie boi.png-f53d00826ff9e855012d8e29b5174d91.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://table texture.png"
-dest_files=["res://.godot/imported/table texture.png-99eadc2ed27bbfff4462650e5487cf8a.s3tc.ctex"]
+source_file="res://Assets/biggie boi.png"
+dest_files=["res://.godot/imported/biggie boi.png-f53d00826ff9e855012d8e29b5174d91.s3tc.ctex"]
 
 [params]
 

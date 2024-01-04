@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://lugyetjhn7fn"]
 
-[ext_resource type="Script" path="res://spider.gd" id="1_exswc"]
-[ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://spider.png" id="2_kxwho"]
+[ext_resource type="Script" path="res://Scripts/spider.gd" id="1_k6afp"]
+[ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://Assets/spider.png" id="2_b80hp"]
 [ext_resource type="PackedScene" uid="uid://lda1fr4p262a" path="res://caster.tscn" id="3_bdf5g"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0by5f"]
@@ -26,23 +26,23 @@ atlas = SubResource("CompressedTexture2D_f2cng")
 region = Rect2(768, 256, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5eeg3"]
-atlas = ExtResource("2_kxwho")
+atlas = ExtResource("2_b80hp")
 region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m55v8"]
-atlas = ExtResource("2_kxwho")
+atlas = ExtResource("2_b80hp")
 region = Rect2(256, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0s6c0"]
-atlas = ExtResource("2_kxwho")
+atlas = ExtResource("2_b80hp")
 region = Rect2(512, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6nni"]
-atlas = ExtResource("2_kxwho")
+atlas = ExtResource("2_b80hp")
 region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bt1o8"]
-atlas = ExtResource("2_kxwho")
+atlas = ExtResource("2_b80hp")
 region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_78g2g"]
@@ -124,7 +124,7 @@ animations = [{
 }]
 
 [node name="Node3D" type="CharacterBody3D"]
-script = ExtResource("1_exswc")
+script = ExtResource("1_k6afp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=3 uid="uid://c148d14s7v1ey"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_2ftgn"]
-[ext_resource type="AudioStream" uid="uid://qxfjnbqrobwf" path="res://monster_die.wav" id="2_7xj8c"]
-[ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://spider.png" id="3_yqowj"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_drnhs"]
+[ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://Assets/spider.png" id="2_3khtb"]
+[ext_resource type="AudioStream" uid="uid://qxfjnbqrobwf" path="res://Audio/monster_die.wav" id="3_ldeo6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_afoyd"]
 
@@ -26,23 +26,23 @@ atlas = SubResource("CompressedTexture2D_f2cng")
 region = Rect2(768, 256, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5eeg3"]
-atlas = ExtResource("3_yqowj")
+atlas = ExtResource("2_3khtb")
 region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m55v8"]
-atlas = ExtResource("3_yqowj")
+atlas = ExtResource("2_3khtb")
 region = Rect2(256, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0s6c0"]
-atlas = ExtResource("3_yqowj")
+atlas = ExtResource("2_3khtb")
 region = Rect2(512, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6nni"]
-atlas = ExtResource("3_yqowj")
+atlas = ExtResource("2_3khtb")
 region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bt1o8"]
-atlas = ExtResource("3_yqowj")
+atlas = ExtResource("2_3khtb")
 region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_78g2g"]
@@ -126,7 +126,7 @@ animations = [{
 [node name="Enemy" type="CharacterBody3D" groups=["Enemy"]]
 collision_layer = 2
 collision_mask = 3
-script = ExtResource("1_2ftgn")
+script = ExtResource("1_drnhs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -142,7 +142,7 @@ animation = &"hurt"
 autoplay = "idle"
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("2_7xj8c")
+stream = ExtResource("3_ldeo6")
 unit_size = 2.0
 bus = &"Sfx"
 

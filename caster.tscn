@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://lda1fr4p262a"]
 
 [ext_resource type="Texture2D" uid="uid://b3g0bhpt4v4tk" path="res://Assets/lowreswiz.png" id="1_8xo8e"]
-[ext_resource type="Script" path="res://caster.gd" id="1_j30ae"]
+[ext_resource type="Script" path="res://Scripts/caster.gd" id="1_j30ae"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_so0tr"]
 
