@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://2go8h24o332j"]
+[gd_scene load_steps=74 format=3 uid="uid://2go8h24o332j"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_kvxj2"]
 [ext_resource type="Texture2D" uid="uid://5kx1fe8i7rqw" path="res://Assets/WizardHands Sheet.png" id="2_805pc"]
@@ -63,10 +63,6 @@ region = Rect2(128, 192, 64, 64)
 atlas = ExtResource("2_805pc")
 region = Rect2(192, 192, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oy6u7"]
-atlas = ExtResource("2_805pc")
-region = Rect2(256, 256, 64, 64)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0arnr"]
 atlas = ExtResource("2_805pc")
 region = Rect2(320, 256, 64, 64)
@@ -78,10 +74,6 @@ region = Rect2(384, 256, 64, 64)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmvdb"]
 atlas = ExtResource("2_805pc")
 region = Rect2(448, 256, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7wg8k"]
-atlas = ExtResource("2_805pc")
-region = Rect2(512, 256, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_foo5a"]
 atlas = ExtResource("2_805pc")
@@ -160,9 +152,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oy6u7")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_0arnr")
 }, {
 "duration": 1.0,
@@ -170,13 +159,10 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fmvdb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7wg8k")
 }],
 "loop": false,
 "name": &"missile cast",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -606,7 +592,7 @@ grow_vertical = 0
 position = Vector2(308, -216)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_2ouaf")
-animation = &"idle"
+animation = &"missile cast"
 autoplay = "idle"
 
 [node name="LeftHand" type="AnimatedSprite2D" parent="CanvasLayer/GunBase"]

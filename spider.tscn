@@ -1,8 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://lugyetjhn7fn"]
+[gd_scene load_steps=19 format=3 uid="uid://lugyetjhn7fn"]
 
 [ext_resource type="Script" path="res://Scripts/spider.gd" id="1_k6afp"]
 [ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://Assets/spider.png" id="2_b80hp"]
-[ext_resource type="PackedScene" uid="uid://lda1fr4p262a" path="res://caster.tscn" id="3_bdf5g"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0by5f"]
 
@@ -123,7 +122,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Node3D" type="CharacterBody3D"]
+[node name="Node3D" type="CharacterBody3D" groups=["Enemy"]]
 script = ExtResource("1_k6afp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -140,5 +139,3 @@ animation = &"hurt"
 autoplay = "idle"
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-
-[node name="Node3D" parent="." instance=ExtResource("3_bdf5g")]

@@ -5,7 +5,8 @@ var type = 0
 var dead = false
 var range
 var timer
-var target_type
+var target_type = ""
+var ignore_type = ""
 
 @onready var mesh = $MeshInstance3D
 @onready var ray = $RayCast3D
@@ -25,8 +26,9 @@ func _ready():
 			target_type = "Enemy"
 		2:
 			SPEED = 20
-			range = 50
-			target_type = "Player"
+			range = 500
+			target_type = "player"
+			ignore_type = "Enemy"
 	
 	timer = range
 	
@@ -53,8 +55,11 @@ func _physics_process(delta):
 					else:
 						ray.get_collider().kill()
 			else:
-				animated_sprite.play("pop")
-				dead = true
+				if ray.get_collider().is_in_group(ignore_type):
+					position += transform.basis * Vector3(0,0,-SPEED) * delta
+				else:
+					animated_sprite.play("pop")
+					dead = true
 
 		else:
 			position += transform.basis * Vector3(0,0,-SPEED) * delta

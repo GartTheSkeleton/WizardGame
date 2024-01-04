@@ -9,7 +9,7 @@ var arcane_missile = preload("res://missile.tscn")
 const turn_speed = 2
 
 var spell
-var cooldown = 30
+
 
 func  _ready():
 	super()
@@ -17,6 +17,7 @@ func  _ready():
 	range = 35
 	aggro_radius = 20
 	move_speed = 3
+	my_cooldown = 75
 
 
 func _physics_process(delta):
@@ -38,9 +39,8 @@ func attack_player():
 			spell.transform.basis = Head.transform.basis
 			get_parent().add_child(spell)
 			ai_state = "idle"
-			cooldown = 65
-		else:
-			cooldown -= 1
+
+		
 		
 		
 	

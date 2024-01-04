@@ -218,7 +218,7 @@ func kill():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 func arcane_shot(): #spawns an Arcane Shot
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.2).timeout
 	spell = arcane_missile.instantiate()
 	spell.type = 0
 	spell.position = ray_cast_3d.global_position

@@ -25,6 +25,9 @@ var type = 0
 var aggro_radius = 1.5
 var attacked = false
 
+var my_cooldown = 10
+var cooldown = my_cooldown
+
 func _ready():
 	animated_sprite_3d.animation_finished.connect(anim_done) 
 	
@@ -91,10 +94,14 @@ func attack_player():
 			
 			if dist_to_player < aggro_radius:
 				ai_state = "attacking"
-				animated_sprite_3d.play("attacking")
+				
 
 		"attacking":
 			var dist_to_player = global_position.distance_to(player.global_position)
+			if cooldown <= 0:
+				animated_sprite_3d.play("attacking")
+			else:
+				cooldown -= 1
 
 
 func kill():
@@ -106,6 +113,7 @@ func anim_done():
 	if !dead:
 		animated_sprite_3d.play("idle")
 		ai_state = "idle"
+		cooldown = my_cooldown
 
 # Function to get the distance between the "Enemy" and "Player" nodes
 func getDistanceToPlayer():
