@@ -23,6 +23,7 @@ func _ready():
 		1:
 			SPEED = 40
 			range = 60
+			ray.target_position.z = -2
 			target_type = "Enemy"
 		2:
 			SPEED = 20

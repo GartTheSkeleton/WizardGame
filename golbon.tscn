@@ -85,8 +85,6 @@ animations = [{
 [node name="Node3D" type="CharacterBody3D" groups=["Enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_w84vv")
-move_speed = null
-attack_range = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_so0tr")
@@ -103,3 +101,5 @@ autoplay = "idle"
 [node name="RayCast3D" type="RayCast3D" parent="."]
 
 [node name="Node3D" parent="." instance=ExtResource("4_i0yc3")]
+move_speed = 3
+attack_range = 2.0

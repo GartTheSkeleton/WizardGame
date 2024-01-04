@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://potr8w0bcnms"]
+[gd_scene load_steps=107 format=3 uid="uid://potr8w0bcnms"]
 
 [ext_resource type="PackedScene" uid="uid://2go8h24o332j" path="res://player.tscn" id="1_n0l67"]
 [ext_resource type="Texture2D" uid="uid://d0sgxlpvclq2f" path="res://Assets/wall02.png" id="1_tqtok"]
@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://b42hryby3ja1v" path="res://Assets/wall01.png" id="5_164vd"]
 [ext_resource type="Texture2D" uid="uid://cjq2mva5xfj4p" path="res://Assets/window.png" id="6_8d5io"]
 [ext_resource type="Texture2D" uid="uid://oismw60cslvw" path="res://Assets/chandelier.png" id="7_tc8w0"]
+[ext_resource type="PackedScene" uid="uid://big6s31edt631" path="res://giant_floater.tscn" id="11_7am7s"]
 [ext_resource type="PackedScene" uid="uid://lugyetjhn7fn" path="res://spider.tscn" id="11_deqwl"]
 [ext_resource type="PackedScene" uid="uid://lda1fr4p262a" path="res://caster.tscn" id="11_ytyhw"]
+[ext_resource type="Texture2D" uid="uid://clecxu3xqf4wg" path="res://Assets/rubble1.png" id="12_qlalc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mluaj"]
 
@@ -4400,23 +4402,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 9, 24.7278)
 
 [node name="Node3D2" parent="." instance=ExtResource("11_ytyhw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -9)
-move_speed = null
-attack_range = null
 
 [node name="Node3D" parent="." instance=ExtResource("11_ytyhw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.06821, -14)
-move_speed = null
-attack_range = null
 
 [node name="Node3D3" parent="." instance=ExtResource("11_ytyhw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1.06821, -9)
-move_speed = null
-attack_range = null
 
 [node name="Node3D4" parent="." instance=ExtResource("11_ytyhw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1.06821, -18)
-move_speed = null
-attack_range = null
 
 [node name="Node3D5" parent="." instance=ExtResource("11_deqwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 20)
@@ -4444,3 +4438,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -7)
 
 [node name="Node3D13" parent="." instance=ExtResource("11_deqwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -15)
+
+[node name="Node3D14" parent="." instance=ExtResource("11_7am7s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.216231, 5, -46.6639)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 7.98377, 2.9, 4.1037)
+texture_filter = 0
+texture = ExtResource("12_qlalc")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 5.98377, 2.9, 4.1037)
+texture_filter = 0
+texture = ExtResource("12_qlalc")

@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://lda1fr4p262a"]
+[gd_scene load_steps=17 format=3 uid="uid://big6s31edt631"]
 
-[ext_resource type="Texture2D" uid="uid://b3g0bhpt4v4tk" path="res://Assets/lowreswiz.png" id="1_8xo8e"]
-[ext_resource type="Script" path="res://Scripts/caster.gd" id="1_j30ae"]
+[ext_resource type="Script" path="res://Scripts/spider.gd" id="1_14a4l"]
+[ext_resource type="Texture2D" uid="uid://b3g0bhpt4v4tk" path="res://Assets/lowreswiz.png" id="1_al83k"]
+[ext_resource type="Texture2D" uid="uid://6kgncagbxl7j" path="res://Assets/giant floater.png" id="2_qhew7"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_so0tr"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bj6dm"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f2cng"]
 load_path = "res://.godot/imported/spider.png-96ad53aa9f5886aa5f95b126fb3f9337.s3tc.ctex"
@@ -25,38 +26,30 @@ atlas = SubResource("CompressedTexture2D_f2cng")
 region = Rect2(768, 256, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tfhh8"]
-atlas = ExtResource("1_8xo8e")
+atlas = ExtResource("1_al83k")
 region = Rect2(768, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrpwy"]
-atlas = ExtResource("1_8xo8e")
+atlas = ExtResource("1_al83k")
 region = Rect2(512, 256, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ro7t0"]
-atlas = ExtResource("1_8xo8e")
+atlas = ExtResource("1_al83k")
 region = Rect2(512, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rsso"]
-atlas = ExtResource("1_8xo8e")
+atlas = ExtResource("1_al83k")
 region = Rect2(768, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xd5cg"]
-atlas = ExtResource("1_8xo8e")
+atlas = ExtResource("1_al83k")
 region = Rect2(512, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_applv"]
-atlas = ExtResource("1_8xo8e")
+atlas = ExtResource("1_al83k")
 region = Rect2(512, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mol5u"]
-atlas = ExtResource("1_8xo8e")
-region = Rect2(0, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_73vm0"]
-atlas = ExtResource("1_8xo8e")
-region = Rect2(256, 0, 256, 256)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4pihm"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_aiyrw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -105,10 +98,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mol5u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_73vm0")
+"texture": ExtResource("2_qhew7")
 }],
 "loop": true,
 "name": &"idle",
@@ -116,18 +106,17 @@ animations = [{
 }]
 
 [node name="Node3D" type="CharacterBody3D" groups=["Enemy"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("1_j30ae")
+script = ExtResource("1_14a4l")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_so0tr")
+shape = SubResource("CapsuleShape3D_bj6dm")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15512, 0)
 pixel_size = 0.009
 billboard = 2
 texture_filter = 0
-sprite_frames = SubResource("SpriteFrames_4pihm")
+sprite_frames = SubResource("SpriteFrames_aiyrw")
 animation = &"idle"
 autoplay = "idle"
 
