@@ -31,7 +31,7 @@ func attack_player():
 	
 	if ai_state == "attacking":
 		if cooldown <= 0:
-			Head.look_at(player.global_transform.origin, Vector3.UP)
+			Head.look_at(player.global_transform.origin + Vector3(0,-.5,0), Vector3.UP)
 			var bullet_dir = player.global_position - global_position
 			spell = arcane_missile.instantiate()
 			spell.type = 2

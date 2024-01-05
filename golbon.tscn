@@ -101,5 +101,3 @@ autoplay = "idle"
 [node name="RayCast3D" type="RayCast3D" parent="."]
 
 [node name="Node3D" parent="." instance=ExtResource("4_i0yc3")]
-move_speed = 3
-attack_range = 2.0
