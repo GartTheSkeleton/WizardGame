@@ -40,7 +40,9 @@ var shield = 0
 var jumpstr = 14
 
 var dir = Vector3(0,0,0)
-
+var headbob = 1
+var headbobcounter = 8
+var offset = 0
 
 #preloading the spell objects
 var arcane_missile = preload("res://missile.tscn")
@@ -173,6 +175,27 @@ func _physics_process(delta):
 		
 	#apply movements
 	move_and_slide()
+	
+	print(position.y)
+	print(offset)
+	print(camera.position.y)
+	
+	if velocity.x != 0 or velocity.y != 0:
+		
+		headbobcounter -= 1
+		
+		if headbob == 1:
+			camera.position.y += .03
+		else:
+			camera.position.y -= .03
+	
+		
+		if headbobcounter <= 0:
+			if headbob == 0:
+				headbob = 1
+			else:
+				headbob = 0
+			headbobcounter = 16
 
 
 func restart():
