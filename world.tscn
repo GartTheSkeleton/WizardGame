@@ -1,14 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://potr8w0bcnms"]
+[gd_scene load_steps=20 format=3 uid="uid://potr8w0bcnms"]
 
 [ext_resource type="PackedScene" uid="uid://2go8h24o332j" path="res://player.tscn" id="1_n0l67"]
 [ext_resource type="Texture2D" uid="uid://5ff0wb3io3qn" path="res://Assets/Images/floor01.png" id="2_gmemq"]
 [ext_resource type="PackedScene" uid="uid://bm2sqmg33pmw4" path="res://Assets/Meshes/wall01.tscn" id="4_bpp12"]
 [ext_resource type="Texture2D" uid="uid://blp7jntmhgpj0" path="res://Assets/Images/table texture.png" id="4_kwa05"]
 [ext_resource type="PackedScene" uid="uid://csi3alld4th8e" path="res://Assets/Meshes/castle_window.tscn" id="5_f5slj"]
-[ext_resource type="PackedScene" uid="uid://bvu7kwign486l" path="res://Assets/Meshes/wall3by4.tscn" id="6_hqv66"]
+[ext_resource type="PackedScene" uid="uid://bvu7kwign486l" path="res://Assets/Meshes/wall3by6.tscn" id="6_hqv66"]
 [ext_resource type="PackedScene" uid="uid://caadawojui2bv" path="res://spider.tscn" id="11_deqwl"]
 [ext_resource type="PackedScene" uid="uid://lda1fr4p262a" path="res://caster.tscn" id="11_ytyhw"]
-[ext_resource type="PackedScene" uid="uid://dcuojvu0lprmv" path="res://Assets/Meshes/wall2by4.tscn" id="17_aymak"]
+[ext_resource type="PackedScene" uid="uid://dcuojvu0lprmv" path="res://Assets/Meshes/wall2by6.tscn" id="17_aymak"]
 
 [sub_resource type="Environment" id="Environment_2bx7j"]
 background_mode = 1
@@ -36,6 +36,10 @@ uv1_scale = Vector3(14, 14, 14)
 transparency = 1
 albedo_texture = ExtResource("4_kwa05")
 texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6q5x3"]
+albedo_texture = ExtResource("2_gmemq")
+uv1_scale = Vector3(3, 2, 1)
 
 [node name="World" type="Node3D"]
 
@@ -154,6 +158,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33, 0, 16)
 [node name="Node3D23" parent="WorldEnvironment/Environment" instance=ExtResource("17_aymak")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -6)
 
+[node name="Node3D41" parent="WorldEnvironment/Environment" instance=ExtResource("17_aymak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -6)
+
 [node name="Node3D10" parent="WorldEnvironment/Environment" instance=ExtResource("17_aymak")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -4.5, 0, 13.3)
 
@@ -212,16 +219,16 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0,
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 0, 21)
 
 [node name="Node3D40" parent="WorldEnvironment/Environment" instance=ExtResource("6_hqv66")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 0, -1)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -44, 0, 1)
 
 [node name="Node3D38" parent="WorldEnvironment/Environment" instance=ExtResource("6_hqv66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 0, 13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 0, 14)
 
 [node name="Node3D39" parent="WorldEnvironment/Environment" instance=ExtResource("6_hqv66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 0, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53, 0, 8)
 
 [node name="Node3D43" parent="WorldEnvironment/Environment" instance=ExtResource("6_hqv66")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, 0, -5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -2)
 
 [node name="Node3D34" parent="WorldEnvironment/Environment" instance=ExtResource("6_hqv66")]
 transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -35, 0, 18)
@@ -230,18 +237,58 @@ transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38, 0, 21)
 
 [node name="Node3D36" parent="WorldEnvironment/Environment" instance=ExtResource("6_hqv66")]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -49.5, 0, 16)
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -50.5, 0, 16.6)
 
 [node name="Node3D37" parent="WorldEnvironment/Environment" instance=ExtResource("6_hqv66")]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -48.4, 0, 0.399998)
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -49.1, 0, 2.4)
 
 [node name="Cube3" parent="WorldEnvironment/Environment" instance=ExtResource("4_bpp12")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -34, 0.123765, -4)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -32, 0.123765, -4)
 material_override = SubResource("StandardMaterial3D_vb2hc")
 skeleton = NodePath("../../..")
 
+[node name="Cube8" parent="WorldEnvironment/Environment" instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 11, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube9" parent="WorldEnvironment/Environment" instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 11, 5)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube10" parent="WorldEnvironment/Environment" instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 11, 7)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube11" parent="WorldEnvironment/Environment" instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -44, 9, 7)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube12" parent="WorldEnvironment/Environment" instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 9, 7)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube13" parent="WorldEnvironment/Environment" instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 9, 7)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube14" parent="WorldEnvironment/Environment" instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -38, 11, 9)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube15" parent="WorldEnvironment/Environment" instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -44, 7, 9)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
 [node name="Cube4" parent="WorldEnvironment/Environment" instance=ExtResource("4_bpp12")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -34, 0.123765, -6)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -32, 0.123765, -6)
 material_override = SubResource("StandardMaterial3D_vb2hc")
 skeleton = NodePath("../../..")
 
@@ -249,10 +296,263 @@ skeleton = NodePath("../../..")
 transform = Transform3D(0.965926, 0.12941, 0.224144, -0.258819, 0.482963, 0.836516, 0, -0.866025, 0.5, 0, 9, 9)
 
 [node name="Player" parent="." instance=ExtResource("1_n0l67")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 15)
 
 [node name="Cube" parent="." instance=ExtResource("4_bpp12")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -55, 1, 51)
+
+[node name="Cube4" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -52, 1, 51)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+
+[node name="Cube7" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(-6.18172e-08, -1.41421, -4.24264, -6.18172e-08, 1.41421, -4.24264, 2, 3.55271e-15, -2.62268e-07, -40.4, 9.2, 9)
+
+[node name="Cube9" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(-1.13028e-07, 1.41421, 4.24264, -6.18172e-08, 1.41421, -4.24264, -2, -1.23634e-07, -1.08635e-07, -41.6, 1.2, 15)
+
+[node name="Cube8" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 6.18172e-08, -7.68165e-08, -6.18172e-08, 1.41421, -4.24264, -2.56055e-08, 1.41421, 4.24264, -44, 5.18579, 11.4986)
+
+[node name="Cube14" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 11, 7)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube15" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 11, 7)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube16" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 11, 5)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube54" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -44, 11, 5)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube55" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 11, 5)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube17" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -44, 11, 7)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube20" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 11, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube21" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 11, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube25" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 11, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube28" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -44, 11, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube29" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 11, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube27" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -44, 3, 15)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube26" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 11, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube50" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -38, 11, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube51" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -38, 11, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube52" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -38, 11, 5)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube56" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 11, 5)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube53" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -38, 11, 7)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube57" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36, 11, 9)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube58" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36, 11, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube59" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36, 11, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube60" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36, 11, 5)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube61" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -36, 11, 7)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube34" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 7, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube35" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 7, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube36" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 7, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube37" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 7, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube38" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 5, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube39" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 5, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube40" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 5, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube41" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 5, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube42" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 3, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube43" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 3, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube44" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 3, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube45" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 3, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube46" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 1, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube47" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 1, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube48" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 1, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube49" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 1, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube22" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 11, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube23" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 11, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube30" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50, 11, 9)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube31" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 11, 9)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube32" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -48, 11, 13)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube33" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 11, 9)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube24" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -46, 11, 11)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube18" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -42, 11, 7)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
+
+[node name="Cube19" parent="." instance=ExtResource("4_bpp12")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -40, 11, 7)
+material_override = SubResource("StandardMaterial3D_6q5x3")
+skeleton = NodePath("../../..")
 
 [node name="Cube2" parent="." instance=ExtResource("4_bpp12")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -55, 1, 54)

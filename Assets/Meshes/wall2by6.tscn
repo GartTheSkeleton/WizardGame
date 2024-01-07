@@ -33,3 +33,15 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 7, -1)
 
 [node name="Cube6" parent="." instance=ExtResource("1_u1h8x")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 7, -3)
+
+[node name="Cube9" parent="." instance=ExtResource("1_u1h8x")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 9, -1)
+
+[node name="Cube10" parent="." instance=ExtResource("1_u1h8x")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 9, -3)
+
+[node name="Cube11" parent="." instance=ExtResource("1_u1h8x")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 11, -1)
+
+[node name="Cube12" parent="." instance=ExtResource("1_u1h8x")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 11, -3)
