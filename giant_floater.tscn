@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://big6s31edt631"]
 
 [ext_resource type="Script" path="res://Scripts/spider.gd" id="1_14a4l"]
-[ext_resource type="Texture2D" uid="uid://b3g0bhpt4v4tk" path="res://Assets/lowreswiz.png" id="1_al83k"]
-[ext_resource type="Texture2D" uid="uid://6kgncagbxl7j" path="res://Assets/giant floater.png" id="2_qhew7"]
+[ext_resource type="Texture2D" uid="uid://b3g0bhpt4v4tk" path="res://Assets/Images/lowreswiz.png" id="1_al83k"]
+[ext_resource type="Texture2D" uid="uid://6kgncagbxl7j" path="res://Assets/Images/giant floater.png" id="2_qhew7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bj6dm"]
 

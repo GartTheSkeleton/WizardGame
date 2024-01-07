@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c70ul82wuwcnq"
-path.s3tc="res://.godot/imported/missile splode.png-d15496dd4c4cf25f7a502de81361fa5a.s3tc.ctex"
+uid="uid://depcituiuvid3"
+path.s3tc="res://.godot/imported/evilwizard.png-2c3a10e77377802a32968869c5af68d1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/missile splode.png"
-dest_files=["res://.godot/imported/missile splode.png-d15496dd4c4cf25f7a502de81361fa5a.s3tc.ctex"]
+source_file="res://Assets/Images/evilwizard.png"
+dest_files=["res://.godot/imported/evilwizard.png-2c3a10e77377802a32968869c5af68d1.s3tc.ctex"]
 
 [params]
 
@@ -22,12 +22,12 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
-mipmaps/limit=-1
+mipmaps/generate=false
+mipmaps/limit=0
 roughness/mode=0
 roughness/src_normal=""
 process/fix_alpha_border=true
-process/premult_alpha=false
+process/premult_alpha=true
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false

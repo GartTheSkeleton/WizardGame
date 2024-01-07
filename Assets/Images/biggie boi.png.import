@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6kgncagbxl7j"
-path.s3tc="res://.godot/imported/giant floater.png-6d9847edb36ea836ae741527f2d2972e.s3tc.ctex"
+uid="uid://dr0vhivfotb7x"
+path.s3tc="res://.godot/imported/biggie boi.png-f89044b993eccbe7dd5b0a6182f5aa3c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/giant floater.png"
-dest_files=["res://.godot/imported/giant floater.png-6d9847edb36ea836ae741527f2d2972e.s3tc.ctex"]
+source_file="res://Assets/Images/biggie boi.png"
+dest_files=["res://.godot/imported/biggie boi.png-f89044b993eccbe7dd5b0a6182f5aa3c.s3tc.ctex"]
 
 [params]
 

@@ -1,45 +1,44 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1prh7ucpdf2v"]
+[gd_scene load_steps=13 format=3 uid="uid://d1prh7ucpdf2v"]
 
 [ext_resource type="Script" path="res://Scripts/caster.gd" id="1_w84vv"]
-[ext_resource type="Texture2D" uid="uid://b3g0bhpt4v4tk" path="res://Assets/lowreswiz.png" id="2_e015b"]
-[ext_resource type="Texture2D" uid="uid://dr0vhivfotb7x" path="res://Assets/biggie boi.png" id="2_qq87m"]
-[ext_resource type="PackedScene" uid="uid://lda1fr4p262a" path="res://caster.tscn" id="4_i0yc3"]
+[ext_resource type="Texture2D" uid="uid://dr0vhivfotb7x" path="res://Assets/Images/biggie boi.png" id="2_ptt85"]
+[ext_resource type="Texture2D" uid="uid://b3g0bhpt4v4tk" path="res://Assets/Images/lowreswiz.png" id="3_io14j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_so0tr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tfhh8"]
-atlas = ExtResource("2_e015b")
+atlas = ExtResource("3_io14j")
 region = Rect2(768, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hrpwy"]
-atlas = ExtResource("2_e015b")
+atlas = ExtResource("3_io14j")
 region = Rect2(512, 256, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ro7t0"]
-atlas = ExtResource("2_e015b")
+atlas = ExtResource("3_io14j")
 region = Rect2(512, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rsso"]
-atlas = ExtResource("2_e015b")
+atlas = ExtResource("3_io14j")
 region = Rect2(768, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xd5cg"]
-atlas = ExtResource("2_e015b")
+atlas = ExtResource("3_io14j")
 region = Rect2(512, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_applv"]
-atlas = ExtResource("2_e015b")
+atlas = ExtResource("3_io14j")
 region = Rect2(512, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mnnr8"]
-atlas = ExtResource("2_qq87m")
+atlas = ExtResource("2_ptt85")
 region = Rect2(0, 0, 1024, 1024)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4pihm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_qq87m")
+"texture": ExtResource("2_ptt85")
 }],
 "loop": false,
 "name": &"attacking",
@@ -99,5 +98,3 @@ animation = &"attacking"
 autoplay = "idle"
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-
-[node name="Node3D" parent="." instance=ExtResource("4_i0yc3")]

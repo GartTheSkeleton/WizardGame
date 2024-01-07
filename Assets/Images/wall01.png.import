@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clecxu3xqf4wg"
-path.s3tc="res://.godot/imported/rubble1.png-f1487e8fc72420a3e80b91f3e82583cd.s3tc.ctex"
+uid="uid://b42hryby3ja1v"
+path.bptc="res://.godot/imported/wall01.png-3079afa9a6005912f323902c7ace609f.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,13 +11,13 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/rubble1.png"
-dest_files=["res://.godot/imported/rubble1.png-f1487e8fc72420a3e80b91f3e82583cd.s3tc.ctex"]
+source_file="res://Assets/Images/wall01.png"
+dest_files=["res://.godot/imported/wall01.png-3079afa9a6005912f323902c7ace609f.bptc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

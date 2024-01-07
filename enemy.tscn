@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://c148d14s7v1ey"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_drnhs"]
-[ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://Assets/spider.png" id="2_3khtb"]
+[ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://Assets/Images/spider.png" id="2_p6vam"]
 [ext_resource type="AudioStream" uid="uid://qxfjnbqrobwf" path="res://Audio/monster_die.wav" id="3_ldeo6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_afoyd"]
@@ -26,23 +26,23 @@ atlas = SubResource("CompressedTexture2D_f2cng")
 region = Rect2(768, 256, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5eeg3"]
-atlas = ExtResource("2_3khtb")
+atlas = ExtResource("2_p6vam")
 region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m55v8"]
-atlas = ExtResource("2_3khtb")
+atlas = ExtResource("2_p6vam")
 region = Rect2(256, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0s6c0"]
-atlas = ExtResource("2_3khtb")
+atlas = ExtResource("2_p6vam")
 region = Rect2(512, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m6nni"]
-atlas = ExtResource("2_3khtb")
+atlas = ExtResource("2_p6vam")
 region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bt1o8"]
-atlas = ExtResource("2_3khtb")
+atlas = ExtResource("2_p6vam")
 region = Rect2(0, 512, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_78g2g"]

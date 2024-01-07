@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blp7jntmhgpj0"
-path.s3tc="res://.godot/imported/table texture.png-6fd391cdb169baf6f094d372c1b6ec77.s3tc.ctex"
+uid="uid://6b1wb00fdk24"
+path.s3tc="res://.godot/imported/wizardhands missile casting.png-b8ba8e1a5bff10b495e8ee2652227618.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/table texture.png"
-dest_files=["res://.godot/imported/table texture.png-6fd391cdb169baf6f094d372c1b6ec77.s3tc.ctex"]
+source_file="res://Assets/Images/wizardhands missile casting.png"
+dest_files=["res://.godot/imported/wizardhands missile casting.png-b8ba8e1a5bff10b495e8ee2652227618.s3tc.ctex"]
 
 [params]
 

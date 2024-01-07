@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oismw60cslvw"
-path.s3tc="res://.godot/imported/chandelier.png-13adf4878e5bc648758834d35583841f.s3tc.ctex"
+uid="uid://5ff0wb3io3qn"
+path="res://.godot/imported/floor01.png-804282ba4d4096e3f5db24d4ba6102e5.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/chandelier.png"
-dest_files=["res://.godot/imported/chandelier.png-13adf4878e5bc648758834d35583841f.s3tc.ctex"]
+source_file="res://Assets/Images/floor01.png"
+dest_files=["res://.godot/imported/floor01.png-804282ba4d4096e3f5db24d4ba6102e5.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

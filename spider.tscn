@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://lugyetjhn7fn"]
+[gd_scene load_steps=19 format=3 uid="uid://caadawojui2bv"]
 
 [ext_resource type="Script" path="res://Scripts/spider.gd" id="1_k6afp"]
-[ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://Assets/spider.png" id="2_b80hp"]
+[ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://Assets/Images/spider.png" id="2_b80hp"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_eati7"]
 

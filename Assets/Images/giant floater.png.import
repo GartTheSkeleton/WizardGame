@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5xvd3tc3ki7m"
-path.s3tc="res://.godot/imported/arcane missile.png-73fd4fe90416fbd58dde79f51a4c8a82.s3tc.ctex"
+uid="uid://6kgncagbxl7j"
+path.s3tc="res://.godot/imported/giant floater.png-ec17d6f83e3a23ff50a74616ccc722af.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/arcane missile.png"
-dest_files=["res://.godot/imported/arcane missile.png-73fd4fe90416fbd58dde79f51a4c8a82.s3tc.ctex"]
+source_file="res://Assets/Images/giant floater.png"
+dest_files=["res://.godot/imported/giant floater.png-ec17d6f83e3a23ff50a74616ccc722af.s3tc.ctex"]
 
 [params]
 

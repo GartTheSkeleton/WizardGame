@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kl7407pxr6xs"
-path="res://.godot/imported/wizardhands2.png-49edbfff37ccdb99851f1c5578a0861d.ctex"
+uid="uid://cww781iag5b5o"
+path="res://.godot/imported/wizardhands.png-d47a08e6e2a9983414f9dedd6fa723de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/wizardhands2.png"
-dest_files=["res://.godot/imported/wizardhands2.png-49edbfff37ccdb99851f1c5578a0861d.ctex"]
+source_file="res://Assets/Images/wizardhands.png"
+dest_files=["res://.godot/imported/wizardhands.png-d47a08e6e2a9983414f9dedd6fa723de.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b42hryby3ja1v"
-path.bptc="res://.godot/imported/wall01.png-0e4dd6c8b1b1aec7b1697c78c4da2af5.bptc.ctex"
+uid="uid://5xvd3tc3ki7m"
+path.s3tc="res://.godot/imported/arcane missile.png-fcb37c8a01cde28df79b4e9424d00c55.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,13 +11,13 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/wall01.png"
-dest_files=["res://.godot/imported/wall01.png-0e4dd6c8b1b1aec7b1697c78c4da2af5.bptc.ctex"]
+source_file="res://Assets/Images/arcane missile.png"
+dest_files=["res://.godot/imported/arcane missile.png-fcb37c8a01cde28df79b4e9424d00c55.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=true
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

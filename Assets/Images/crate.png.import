@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccl1ek5m73dm8"
-path.s3tc="res://.godot/imported/walltemplate.png-8036ef519900867e6f75377557f80692.s3tc.ctex"
+uid="uid://df83vf7t4re3e"
+path.s3tc="res://.godot/imported/crate.png-209e0932efd5b1c3e101404942c64890.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/walltemplate.png"
-dest_files=["res://.godot/imported/walltemplate.png-8036ef519900867e6f75377557f80692.s3tc.ctex"]
+source_file="res://Assets/Images/crate.png"
+dest_files=["res://.godot/imported/crate.png-209e0932efd5b1c3e101404942c64890.s3tc.ctex"]
 
 [params]
 

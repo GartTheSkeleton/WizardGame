@@ -1,31 +1,31 @@
 [gd_scene load_steps=12 format=3 uid="uid://lbpmboienr1g"]
 
 [ext_resource type="Script" path="res://Scripts/missile.gd" id="1_3sdim"]
-[ext_resource type="Texture2D" uid="uid://5xvd3tc3ki7m" path="res://Assets/arcane missile.png" id="2_d5m8x"]
-[ext_resource type="Texture2D" uid="uid://c70ul82wuwcnq" path="res://Assets/missile splode.png" id="3_7nvry"]
+[ext_resource type="Texture2D" uid="uid://5xvd3tc3ki7m" path="res://Assets/Images/arcane missile.png" id="2_wgcye"]
+[ext_resource type="Texture2D" uid="uid://c70ul82wuwcnq" path="res://Assets/Images/missile splode.png" id="3_mc5im"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4rp50"]
-atlas = ExtResource("2_d5m8x")
+atlas = ExtResource("2_wgcye")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tlew3"]
-atlas = ExtResource("2_d5m8x")
+atlas = ExtResource("2_wgcye")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ie6la"]
-atlas = ExtResource("2_d5m8x")
+atlas = ExtResource("2_wgcye")
 region = Rect2(256, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_phe23"]
-atlas = ExtResource("3_7nvry")
+atlas = ExtResource("3_mc5im")
 region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pq1gn"]
-atlas = ExtResource("3_7nvry")
+atlas = ExtResource("3_mc5im")
 region = Rect2(256, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6r0gp"]
-atlas = ExtResource("3_7nvry")
+atlas = ExtResource("3_mc5im")
 region = Rect2(512, 0, 256, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6bs74"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvu7kwign486l"]
+
+[ext_resource type="PackedScene" uid="uid://bm2sqmg33pmw4" path="res://Assets/Meshes/wall01.tscn" id="1_r526q"]
+[ext_resource type="Texture2D" uid="uid://d0sgxlpvclq2f" path="res://Assets/Images/wall02.png" id="2_bh1ls"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vqxu"]
+albedo_texture = ExtResource("2_bh1ls")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Cube" parent="." instance=ExtResource("1_r526q")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 3, -1)
+
+[node name="Cube7" parent="." instance=ExtResource("1_r526q")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 1, -1)
+material_override = SubResource("StandardMaterial3D_6vqxu")
+
+[node name="Cube8" parent="." instance=ExtResource("1_r526q")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 1, -3)
+material_override = SubResource("StandardMaterial3D_6vqxu")
+
+[node name="Cube2" parent="." instance=ExtResource("1_r526q")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 3, -3)
+
+[node name="Cube3" parent="." instance=ExtResource("1_r526q")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 5, -1)
+
+[node name="Cube4" parent="." instance=ExtResource("1_r526q")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 5, -3)
+
+[node name="Cube5" parent="." instance=ExtResource("1_r526q")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 7, -1)
+
+[node name="Cube6" parent="." instance=ExtResource("1_r526q")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 7, -3)
+
+[node name="Cube9" parent="." instance=ExtResource("1_r526q")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 1, 1)
+material_override = SubResource("StandardMaterial3D_6vqxu")
+
+[node name="Cube10" parent="." instance=ExtResource("1_r526q")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 3, 1)
+
+[node name="Cube11" parent="." instance=ExtResource("1_r526q")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 5, 1)
+
+[node name="Cube12" parent="." instance=ExtResource("1_r526q")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 7, 1)

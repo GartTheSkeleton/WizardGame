@@ -2,26 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5ff0wb3io3qn"
-path="res://.godot/imported/floor01.png-04b9b61d595c0099eb7eb527c77c5503.ctex"
+uid="uid://dmqdoex2fgx0v"
+path.s3tc="res://.godot/imported/spider.png-73f4c607f32f25ccbcfb1a3216b59ed6.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Assets/floor01.png"
-dest_files=["res://.godot/imported/floor01.png-04b9b61d595c0099eb7eb527c77c5503.ctex"]
+source_file="res://Assets/Images/spider.png"
+dest_files=["res://.godot/imported/spider.png-73f4c607f32f25ccbcfb1a3216b59ed6.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""

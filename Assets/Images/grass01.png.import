@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6b1wb00fdk24"
-path.s3tc="res://.godot/imported/wizardhands missile casting.png-e3a11324aab1cc24d25f3646a8a28cb7.s3tc.ctex"
+uid="uid://buewyy45mbat"
+path.s3tc="res://.godot/imported/grass01.png-443d41212aae2127937024f11db4ee9e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/wizardhands missile casting.png"
-dest_files=["res://.godot/imported/wizardhands missile casting.png-e3a11324aab1cc24d25f3646a8a28cb7.s3tc.ctex"]
+source_file="res://Assets/Images/grass01.png"
+dest_files=["res://.godot/imported/grass01.png-443d41212aae2127937024f11db4ee9e.s3tc.ctex"]
 
 [params]
 

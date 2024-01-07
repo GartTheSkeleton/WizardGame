@@ -1,7 +1,7 @@
 [gd_scene load_steps=75 format=3 uid="uid://2go8h24o332j"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_kvxj2"]
-[ext_resource type="Texture2D" uid="uid://5kx1fe8i7rqw" path="res://Assets/WizardHands Sheet.png" id="2_805pc"]
+[ext_resource type="Texture2D" uid="uid://5kx1fe8i7rqw" path="res://Assets/Images/WizardHands Sheet.png" id="2_805pc"]
 [ext_resource type="AudioStream" uid="uid://cvrq385m34nc5" path="res://Audio/revolver_shot1.wav" id="3_f5mhc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xmbu"]
@@ -114,7 +114,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hex cast",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -131,7 +131,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"hex idle",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -596,7 +596,7 @@ grow_vertical = 0
 position = Vector2(308, -216)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_2ouaf")
-animation = &"missile cast"
+animation = &"hex cast"
 autoplay = "idle"
 
 [node name="LeftHand" type="AnimatedSprite2D" parent="CanvasLayer/GunBase"]
