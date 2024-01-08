@@ -8,7 +8,9 @@ class_name Enemy
 @export var attack_range = 2.0
 
 @onready var player : CharacterBody3D = get_tree().get_first_node_in_group("player")
+@onready var player_ray = $WatchPlayer
 @onready var ray_cast = $RayCast3D
+@onready var navmesh: NavigationAgent3D = $NavigationAgent3D
 
 var dead = false
 var range = 20
@@ -24,6 +26,7 @@ var ai_state = "idle"
 var type = 0
 var aggro_radius = 1.5
 var attacked = false
+var adjusttimer = 12
 
 var my_cooldown = 10
 var cooldown = my_cooldown
@@ -31,15 +34,19 @@ var cooldown = my_cooldown
 func _ready():
 	animated_sprite_3d.animation_finished.connect(anim_done) 
 	
+	player_ray.set_target_position(player.global_position)
+	
 	dir = Vector3(0,0,0)
 	
 	dir.y = 0.0
 	dir = dir.normalized()
 	velocity = dir * 1
 	
-#func _process(delta):
-#
-#	pass
+func _process(delta):
+	
+#	print(player_ray.get_collider())
+#	print(player_ray.is_colliding())
+	print("ACTIVE:" + str(active))
 
 func _physics_process(delta):
 	if dead:
@@ -49,9 +56,21 @@ func _physics_process(delta):
 	
 	var distanceToPlayer = getDistanceToPlayer()
 	
-	if distanceToPlayer <= range and !active:
-		active = true
-			
+	player_ray.set_target_position(player.global_position)
+	
+	if player_ray.is_colliding() == false:
+		print("Not colliding")
+		if distanceToPlayer <= range:
+			print("IN RANGE")
+			if active == false:
+				active = true
+				print("I HAVE ACTIVATED")
+	else:
+		print("Colliding")
+
+	
+	navmesh.target_position = player.global_position
+	
 	if hurt == true:
 		print("I, AN ENEMY, HAVE BEEN HURT")
 		animated_sprite_3d.play("hurt")
@@ -63,15 +82,19 @@ func _physics_process(delta):
 			hurt = false
 	else: if active == true:
 		
-		dir = player.global_position - global_position
-	
-		dir.y = 0.0
-		dir = dir.normalized()
+#		dir = player.global_position - global_position
+#
+#		dir.y = 0.0
+#		dir = dir.normalized()
+#
+#		velocity = dir * move_speed
 		
-		velocity = dir * move_speed
+		var direction = Vector3()
 		
-		var player_pos_diff_x = position.x-player.position.x
-		var player_pos_diff_z = position.z-player.position.z
+		direction = navmesh.get_next_path_position() - global_position
+		direction = direction.normalized()
+		
+		velocity = direction * move_speed
 		
 	else:
 		velocity = Vector3(0,0,0)

@@ -176,9 +176,6 @@ func _physics_process(delta):
 	#apply movements
 	move_and_slide()
 	
-	print(position.y)
-	print(offset)
-	print(camera.position.y)
 	
 	if velocity.x != 0 or velocity.y != 0:
 		

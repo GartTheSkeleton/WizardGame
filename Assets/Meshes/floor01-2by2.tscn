@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://mthsaxts6h5k"]
+
+[ext_resource type="PackedScene" uid="uid://byl5v8w77h7x6" path="res://Assets/Meshes/floor01.tscn" id="1_trmqc"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Cube" parent="." instance=ExtResource("1_trmqc")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 1, 1)
+
+[node name="Cube2" parent="." instance=ExtResource("1_trmqc")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 1, 1)
+
+[node name="Cube3" parent="." instance=ExtResource("1_trmqc")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 1, -1)
+
+[node name="Cube4" parent="." instance=ExtResource("1_trmqc")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 1, -1)

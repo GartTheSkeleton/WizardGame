@@ -98,3 +98,5 @@ animation = &"attacking"
 autoplay = "idle"
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

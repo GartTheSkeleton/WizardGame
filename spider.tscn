@@ -126,11 +126,11 @@ animations = [{
 script = ExtResource("1_k6afp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_eati7")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15512, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15512, 0)
 pixel_size = 0.009
 billboard = 2
 texture_filter = 0
@@ -139,3 +139,8 @@ animation = &"hurt"
 autoplay = "idle"
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="WatchPlayer" type="RayCast3D" parent="."]
+collision_mask = 3

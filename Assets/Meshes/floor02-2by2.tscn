@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpuanaljk3gbd"]
+
+[ext_resource type="PackedScene" uid="uid://byl5v8w77h7x6" path="res://Assets/Meshes/floor01.tscn" id="1_syac0"]
+[ext_resource type="Texture2D" uid="uid://csk1fau81gavn" path="res://Assets/Images/floor02.png" id="2_votrf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4nu3"]
+albedo_texture = ExtResource("2_votrf")
+uv1_scale = Vector3(3, 2, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Cube" parent="." instance=ExtResource("1_syac0")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 1, 1)
+material_override = SubResource("StandardMaterial3D_y4nu3")
+
+[node name="Cube4" parent="." instance=ExtResource("1_syac0")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 1, -1)
+material_override = SubResource("StandardMaterial3D_y4nu3")
+
+[node name="Cube2" parent="." instance=ExtResource("1_syac0")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 1, 1)
+material_override = SubResource("StandardMaterial3D_y4nu3")
+
+[node name="Cube3" parent="." instance=ExtResource("1_syac0")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 1, -1)
+material_override = SubResource("StandardMaterial3D_y4nu3")

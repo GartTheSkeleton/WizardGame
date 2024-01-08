@@ -24,24 +24,23 @@ func _physics_process(delta):
 	super(delta)
 	
 	
+	
+	
 	#print(result)
 
 func attack_player():
 	super()
 	
 	if ai_state == "attacking":
-		if cooldown <= 0:
-			Head.look_at(player.global_transform.origin + Vector3(0,-.5,0), Vector3.UP)
-			var bullet_dir = player.global_position - global_position
-			spell = arcane_missile.instantiate()
-			spell.type = 2
-			spell.position = Vector3(position.x,position.y+1,position.z)
-			spell.transform.basis = Head.transform.basis
-			get_parent().add_child(spell)
-			cooldown = my_cooldown
-			ai_state = "idle"
-
-		
-		
-		
-	
+		if attacked == false:	
+			if cooldown <= 0:
+				Head.look_at(player.global_transform.origin + Vector3(0,-.5,0), Vector3.UP)
+				var bullet_dir = player.global_position - global_position
+				spell = arcane_missile.instantiate()
+				spell.type = 2
+				spell.position = Vector3(position.x,position.y+1,position.z)
+				spell.transform.basis = Head.transform.basis
+				get_parent().add_child(spell)
+				cooldown = my_cooldown
+				attacked = true
+				ai_state = "idle"
