@@ -131,3 +131,4 @@ top_level = true
 
 [node name="WatchPlayer" type="RayCast3D" parent="."]
 collision_mask = 3
+hit_from_inside = true

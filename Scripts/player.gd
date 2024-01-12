@@ -90,22 +90,31 @@ func _process(delta):
 			animated_sprite_2d.play("idle")
 	
 	#check for weapon switching
-	if Input.is_action_just_pressed("scroll_down"):
-		if curr_spell == 0:
-			curr_spell = spells.size() - 1
-		else:
-			curr_spell -= 1
-	if Input.is_action_just_pressed("scroll_up"):
-		if curr_spell == spells.size() - 1:
-			curr_spell = 0
-		else:
-			curr_spell += 1
+#	if Input.is_action_just_pressed("scroll_down"):
+#		if curr_spell == 0:
+#			curr_spell = spells.size() - 1
+#		else:
+#			curr_spell -= 1
+#	if Input.is_action_just_pressed("scroll_up"):
+#		if curr_spell == spells.size() - 1:
+#			curr_spell = 0
+#		else:
+#			curr_spell += 1
+	
+	if Input.is_action_just_pressed("switch_action"):
+		print("Switched Action")
+	if Input.is_action_just_pressed("switch_weapon"):
+		print("Switched Weapon")
+			
 	if Input.is_action_just_pressed("press_1"):
 		if curr_spell != 0:
 			curr_spell = 0
 	if Input.is_action_just_pressed("press_2"):
 		if curr_spell != 1:
 			curr_spell = 1
+	if Input.is_action_just_pressed("press_3"):
+		if curr_spell != 2:
+			curr_spell = 2
 
 	#Check quite/restart inputs
 	if Input.is_action_just_pressed("exit"):
@@ -220,7 +229,9 @@ func shoot():
 			
 			burst_shot()
 			
-			
+		2:
+			animated_sprite_2d.play("blast cast")
+			last_spell = curr_spell
 
 	idle_timer = idle_length #Set the timer for idle animations
 
@@ -232,6 +243,8 @@ func shoot_anim_done(): #logic that applies after the shoot animation finishes
 			animated_sprite_2d.play("missile idle")
 		1:
 			animated_sprite_2d.play("hex idle")
+		2:
+			animated_sprite_2d.play("blast idle")
 	#animated_sprite_2d.play("idle")
 
 func kill():

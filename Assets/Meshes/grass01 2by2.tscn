@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://8dbtlj0oc7dg"]
+
+[ext_resource type="PackedScene" uid="uid://b1k0ped0mo44l" path="res://Assets/Meshes/grass01.tscn" id="1_akde8"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Cube" parent="." instance=ExtResource("1_akde8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 1, -1)
+
+[node name="Cube2" parent="." instance=ExtResource("1_akde8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 1, -1)
+
+[node name="Cube3" parent="." instance=ExtResource("1_akde8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 1, 1)
+
+[node name="Cube4" parent="." instance=ExtResource("1_akde8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 1, 1)

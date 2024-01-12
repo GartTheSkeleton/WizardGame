@@ -13,7 +13,7 @@ class_name Enemy
 @onready var navmesh: NavigationAgent3D = $NavigationAgent3D
 
 var dead = false
-var range = 20
+var range = 30
 var active = false
 var chasing = false
 var hurt = false
@@ -43,10 +43,8 @@ func _ready():
 	velocity = dir * 1
 	
 func _process(delta):
-	
 #	print(player_ray.get_collider())
-#	print(player_ray.is_colliding())
-	print("ACTIVE:" + str(active))
+	pass
 
 func _physics_process(delta):
 	if dead:
@@ -56,17 +54,25 @@ func _physics_process(delta):
 	
 	var distanceToPlayer = getDistanceToPlayer()
 	
-	player_ray.set_target_position(player.global_position)
+	#player_ray.set_target_position(player.global_position)
+	var space_state = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(Vector3(global_position.x, global_position.y, global_position.z), Vector3(player.global_position.x, player.global_position.y, player.global_position.z))
+	var result = space_state.intersect_ray(query)
 	
-	if player_ray.is_colliding() == false:
-		print("Not colliding")
+	print(result)
+	print("ACTIVE:" + str(active))
+	print(player)
+	
+	if result.collider == player:
+		#print("Not colliding")
 		if distanceToPlayer <= range:
-			print("IN RANGE")
+			#print("IN RANGE")
 			if active == false:
 				active = true
 				print("I HAVE ACTIVATED")
 	else:
-		print("Colliding")
+		pass
+	#	print("Colliding")
 
 	
 	navmesh.target_position = player.global_position

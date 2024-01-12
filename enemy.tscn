@@ -153,4 +153,6 @@ top_level = true
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="WatchPlayer" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 collision_mask = 3
+hit_from_inside = true

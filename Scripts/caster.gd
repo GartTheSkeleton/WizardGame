@@ -14,7 +14,7 @@ var spell
 func  _ready():
 	super()
 	type = 1
-	range = 45
+	range = 40
 	aggro_radius = 35
 	move_speed = 3
 	my_cooldown = 75

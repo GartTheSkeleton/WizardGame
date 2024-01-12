@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://2go8h24o332j"]
+[gd_scene load_steps=89 format=3 uid="uid://2go8h24o332j"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_kvxj2"]
 [ext_resource type="Texture2D" uid="uid://5kx1fe8i7rqw" path="res://Assets/Images/WizardHands Sheet.png" id="2_805pc"]
@@ -6,6 +6,62 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xmbu"]
 height = 1.8
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8q11"]
+atlas = ExtResource("2_805pc")
+region = Rect2(256, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80wet"]
+atlas = ExtResource("2_805pc")
+region = Rect2(320, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ftey"]
+atlas = ExtResource("2_805pc")
+region = Rect2(384, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj5as"]
+atlas = ExtResource("2_805pc")
+region = Rect2(448, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxksf"]
+atlas = ExtResource("2_805pc")
+region = Rect2(512, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrray"]
+atlas = ExtResource("2_805pc")
+region = Rect2(576, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmlff"]
+atlas = ExtResource("2_805pc")
+region = Rect2(640, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bf48f"]
+atlas = ExtResource("2_805pc")
+region = Rect2(704, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou8tt"]
+atlas = ExtResource("2_805pc")
+region = Rect2(768, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p10c4"]
+atlas = ExtResource("2_805pc")
+region = Rect2(832, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca6pb"]
+atlas = ExtResource("2_805pc")
+region = Rect2(0, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2t5k"]
+atlas = ExtResource("2_805pc")
+region = Rect2(64, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlmd1"]
+atlas = ExtResource("2_805pc")
+region = Rect2(128, 384, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqyf0"]
+atlas = ExtResource("2_805pc")
+region = Rect2(192, 384, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h7ov2"]
 atlas = ExtResource("2_805pc")
@@ -93,6 +149,58 @@ region = Rect2(192, 256, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2ouaf"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8q11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80wet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ftey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj5as")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxksf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrray")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmlff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bf48f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou8tt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p10c4")
+}],
+"loop": false,
+"name": &"blast cast",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca6pb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2t5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlmd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqyf0")
+}],
+"loop": true,
+"name": &"blast idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h7ov2")
@@ -596,7 +704,7 @@ grow_vertical = 0
 position = Vector2(308, -216)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_2ouaf")
-animation = &"hex cast"
+animation = &"blast idle"
 autoplay = "idle"
 
 [node name="LeftHand" type="AnimatedSprite2D" parent="CanvasLayer/GunBase"]
@@ -606,7 +714,7 @@ sprite_frames = SubResource("SpriteFrames_4svt4")
 animation = &"forceidle"
 autoplay = "healidle"
 frame = 3
-frame_progress = 0.304317
+frame_progress = 0.652458
 
 [node name="Crosshair" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 8
@@ -692,7 +800,7 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_right = 5.0
 offset_bottom = -108.0
-text = "Scroll or press 1 and 2 to toggle attacks.
+text = "Press 1 and 2 to toggle attacks.
 Shift to sprint short distances."
 label_settings = SubResource("LabelSettings_ul0oy")
 horizontal_alignment = 1
