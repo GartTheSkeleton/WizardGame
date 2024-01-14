@@ -56,22 +56,22 @@ func _physics_process(delta):
 	
 	#player_ray.set_target_position(player.global_position)
 	var space_state = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.create(Vector3(global_position.x, global_position.y, global_position.z), Vector3(player.global_position.x, player.global_position.y, player.global_position.z))
+	var query = PhysicsRayQueryParameters3D.create(Vector3(global_position.x, global_position.y + 3, global_position.z), Vector3(player.global_position.x, player.global_position.y, player.global_position.z))
 	var result = space_state.intersect_ray(query)
 	
-	print(result)
-	print("ACTIVE:" + str(active))
+	print(result.collider)
 	print(player)
+	print("ACTIVE:" + str(active))
 	
 	if result.collider == player:
-		#print("Not colliding")
 		if distanceToPlayer <= range:
 			#print("IN RANGE")
 			if active == false:
 				active = true
 				print("I HAVE ACTIVATED")
 	else:
-		pass
+		result.collider.queue_free
+		
 	#	print("Colliding")
 
 	

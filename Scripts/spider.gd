@@ -28,4 +28,3 @@ func attack_player():
 					player.hurt_timer = 12
 					player.dir = player.global_position - global_position
 					player.dir.y = 0.0
-

@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://c148d14s7v1ey"]
+[gd_scene load_steps=23 format=3 uid="uid://c148d14s7v1ey"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_drnhs"]
 [ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://Assets/Images/spider.png" id="2_p6vam"]
 [ext_resource type="AudioStream" uid="uid://qxfjnbqrobwf" path="res://Audio/monster_die.wav" id="3_ldeo6"]
+[ext_resource type="Texture2D" uid="uid://cjx76b3rwsl42" path="res://Assets/Images/giant_floater.png" id="3_n2y23"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_afoyd"]
 
@@ -45,21 +46,29 @@ region = Rect2(0, 512, 256, 256)
 atlas = ExtResource("2_p6vam")
 region = Rect2(0, 512, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_78g2g"]
-atlas = SubResource("CompressedTexture2D_f2cng")
-region = Rect2(0, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_msjpn"]
+atlas = ExtResource("3_n2y23")
+region = Rect2(0, 0, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vgrfx"]
-atlas = SubResource("CompressedTexture2D_f2cng")
-region = Rect2(256, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_612rl"]
+atlas = ExtResource("3_n2y23")
+region = Rect2(1536, 0, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7l7a7"]
-atlas = SubResource("CompressedTexture2D_f2cng")
-region = Rect2(512, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pxvi"]
+atlas = ExtResource("3_n2y23")
+region = Rect2(3072, 0, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h7a1p"]
-atlas = SubResource("CompressedTexture2D_f2cng")
-region = Rect2(768, 0, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbi17"]
+atlas = ExtResource("3_n2y23")
+region = Rect2(0, 1280, 1536, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jacuv"]
+atlas = ExtResource("3_n2y23")
+region = Rect2(1536, 1280, 1536, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6h7ld"]
+atlas = ExtResource("3_n2y23")
+region = Rect2(3072, 1280, 1536, 1280)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u8br5"]
 animations = [{
@@ -107,16 +116,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_78g2g")
+"texture": SubResource("AtlasTexture_msjpn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vgrfx")
+"texture": SubResource("AtlasTexture_612rl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7l7a7")
+"texture": SubResource("AtlasTexture_1pxvi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h7a1p")
+"texture": SubResource("AtlasTexture_sbi17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jacuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6h7ld")
 }],
 "loop": true,
 "name": &"idle",

@@ -34,7 +34,11 @@ var spell
 
 var maxhp = 100
 var hp = 100
+var maxmana = 100
 var mana = 100
+var manatimer = 0
+var manatimerlength = 80
+
 var shield = 0
 
 var jumpstr = 14
@@ -146,6 +150,11 @@ func _process(delta):
 		else:
 			tired = false
 	
+	if manatimer <= 0:
+		if mana < maxmana:
+			mana += 1
+	else:
+		manatimer -= 1
 	
 
 func _physics_process(delta):
@@ -210,28 +219,33 @@ func restart():
 func shoot():
 	if !can_shoot:
 		return
-	can_shoot = false
 	idle = false
 	match curr_spell: #switch through the spells for the current one
 		0:
-			animated_sprite_2d.play("missile cast")
-			last_spell = curr_spell
-			
-			arcane_shot()
-			
-			#if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("is_enemy"):
-			#	target_enemy = ray_cast_3d.get_collider()
-			#else:
-			#	target_enemy = -1
+			if mana >= 5:
+				can_shoot = false
+				mana -= 5
+				animated_sprite_2d.play("missile cast")
+				last_spell = curr_spell
+				manatimer = manatimerlength
+				arcane_shot()
+
 		1:
-			animated_sprite_2d.play("hex cast")
-			last_spell = curr_spell
-			
-			burst_shot()
+			if mana >= 20:
+				can_shoot = false
+				mana -= 20
+				animated_sprite_2d.play("hex cast")
+				last_spell = curr_spell
+				manatimer = manatimerlength
+				burst_shot()
 			
 		2:
-			animated_sprite_2d.play("blast cast")
-			last_spell = curr_spell
+			if mana >= 35:
+				can_shoot = false
+				mana -= 35
+				animated_sprite_2d.play("blast cast")
+				last_spell = curr_spell
+				manatimer = manatimerlength
 
 	idle_timer = idle_length #Set the timer for idle animations
 
@@ -262,6 +276,7 @@ func arcane_shot(): #spawns an Arcane Shot
 
 	
 func spawn_missile(): #spawns an Arcane Missile
+	
 	await get_tree().create_timer(0.5).timeout
 	spell = arcane_missile.instantiate()
 	spell.type = 1
@@ -277,9 +292,12 @@ func burst_shot(): #Burst Shot of Arcane Missiles
 	spawn_missile()
 	await get_tree().create_timer(0.1).timeout
 	spawn_missile()
+	
 
 func update_ui(): #UI Logic
-	health_bar.text = str(hp)
+	var uitext = "HP: " + str(hp) + " MANA: " + str(floor(mana)) + " MANATIMER: " + str(manatimer)
+	health_bar.text = uitext
+	
 	
 	tutorial_counter -= 1
 	if tutorial_counter <= 0:

@@ -115,7 +115,7 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Node3D" type="CharacterBody3D" groups=["Enemy"]]
+[node name="Caster" type="CharacterBody3D" groups=["Enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_j30ae")
 

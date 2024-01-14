@@ -22,11 +22,7 @@ func  _ready():
 
 func _physics_process(delta):
 	super(delta)
-	
-	
-	
-	
-	#print(result)
+
 
 func attack_player():
 	super()
