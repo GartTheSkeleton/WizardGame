@@ -800,8 +800,8 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_right = 5.0
 offset_bottom = -108.0
-text = "Press 1 and 2 to toggle attacks.
-Shift to sprint short distances."
+text = "Press 'E' to toggle attacks.
+Press 'Shift' to sprint short distances."
 label_settings = SubResource("LabelSettings_ul0oy")
 horizontal_alignment = 1
 

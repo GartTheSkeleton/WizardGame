@@ -108,7 +108,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("switch_action"):
 		print("Switched Action")
 	if Input.is_action_just_pressed("switch_weapon"):
-		print("Switched Weapon")
+		if curr_spell < 2:
+			curr_spell += 1
+		else:
+			curr_spell = 0
+		print(curr_spell)
 			
 	if Input.is_action_just_pressed("press_1"):
 		if curr_spell != 0:
@@ -152,7 +156,7 @@ func _process(delta):
 	
 	if manatimer <= 0:
 		if mana < maxmana:
-			mana += 1
+			mana += .5
 	else:
 		manatimer -= 1
 	

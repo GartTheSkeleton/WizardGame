@@ -59,9 +59,9 @@ func _physics_process(delta):
 	var query = PhysicsRayQueryParameters3D.create(Vector3(global_position.x, global_position.y + 3, global_position.z), Vector3(player.global_position.x, player.global_position.y, player.global_position.z))
 	var result = space_state.intersect_ray(query)
 	
-	print(result.collider)
-	print(player)
-	print("ACTIVE:" + str(active))
+#	print(result.collider)
+#	print(player)
+#	print("ACTIVE:" + str(active))
 	
 	if result.collider == player:
 		if distanceToPlayer <= range:

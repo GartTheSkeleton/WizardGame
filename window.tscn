@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://duxnm5wql46qr"]
+
+[ext_resource type="PackedScene" uid="uid://csi3alld4th8e" path="res://Assets/Meshes/castle_window.tscn" id="1_ree8d"]
+[ext_resource type="PackedScene" uid="uid://bm2sqmg33pmw4" path="res://Assets/Meshes/wall01.tscn" id="2_u33gr"]
+
+[node name="Window" type="Node3D"]
+
+[node name="Node3D311" parent="." instance=ExtResource("1_ree8d")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, 1)
+
+[node name="Cube4" parent="." instance=ExtResource("2_u33gr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3, 9, 0)
+skeleton = NodePath("../../../..")
+
+[node name="Cube182" parent="." instance=ExtResource("2_u33gr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3, 11, 0)
+skeleton = NodePath("../../../..")
+
+[node name="Cube183" parent="." instance=ExtResource("2_u33gr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 9, 0)
+skeleton = NodePath("../../../..")
+
+[node name="Cube184" parent="." instance=ExtResource("2_u33gr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, 11, 0)
+skeleton = NodePath("../../../..")
+
+[node name="Cube185" parent="." instance=ExtResource("2_u33gr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 9, 0)
+skeleton = NodePath("../../../..")
+
+[node name="Cube186" parent="." instance=ExtResource("2_u33gr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, 11, 0)
+skeleton = NodePath("../../../..")
+
+[node name="Cube187" parent="." instance=ExtResource("2_u33gr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3, 9, 0)
+skeleton = NodePath("../../../..")
+
+[node name="Cube188" parent="." instance=ExtResource("2_u33gr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -3, 11, 0)
+skeleton = NodePath("../../../..")

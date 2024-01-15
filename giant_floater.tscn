@@ -1,50 +1,36 @@
-[gd_scene load_steps=23 format=3 uid="uid://dlkueipxrdaov"]
+[gd_scene load_steps=20 format=3 uid="uid://dlkueipxrdaov"]
 
 [ext_resource type="Script" path="res://Scripts/giant_floater.gd" id="1_mvwcg"]
-[ext_resource type="Texture2D" uid="uid://dmqdoex2fgx0v" path="res://Assets/Images/spider.png" id="2_to4g8"]
+[ext_resource type="Texture2D" uid="uid://np81j02b7kvi" path="res://Assets/Images/giant_floater_attack.png" id="2_kubb5"]
 [ext_resource type="AudioStream" uid="uid://qxfjnbqrobwf" path="res://Audio/monster_die.wav" id="3_20sp7"]
 [ext_resource type="Texture2D" uid="uid://cjx76b3rwsl42" path="res://Assets/Images/giant_floater.png" id="3_dopi8"]
+[ext_resource type="Texture2D" uid="uid://beyl7tbhgl2dy" path="res://Assets/Images/giant_floater_dead.png" id="3_jhifh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_afoyd"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f2cng"]
-load_path = "res://.godot/imported/spider.png-96ad53aa9f5886aa5f95b126fb3f9337.s3tc.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4x8h"]
+atlas = ExtResource("2_kubb5")
+region = Rect2(0, 0, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wl1bi"]
-atlas = SubResource("CompressedTexture2D_f2cng")
-region = Rect2(0, 256, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nut35"]
+atlas = ExtResource("2_kubb5")
+region = Rect2(1536, 0, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s6e4j"]
-atlas = SubResource("CompressedTexture2D_f2cng")
-region = Rect2(256, 256, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_60wr6"]
+atlas = ExtResource("2_kubb5")
+region = Rect2(3072, 0, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ajt8"]
-atlas = SubResource("CompressedTexture2D_f2cng")
-region = Rect2(512, 256, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7y2uj"]
+atlas = ExtResource("2_kubb5")
+region = Rect2(0, 1280, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cvjnf"]
-atlas = SubResource("CompressedTexture2D_f2cng")
-region = Rect2(768, 256, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e85qd"]
+atlas = ExtResource("2_kubb5")
+region = Rect2(1536, 1280, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5eeg3"]
-atlas = ExtResource("2_to4g8")
-region = Rect2(0, 512, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m55v8"]
-atlas = ExtResource("2_to4g8")
-region = Rect2(256, 512, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0s6c0"]
-atlas = ExtResource("2_to4g8")
-region = Rect2(512, 512, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m6nni"]
-atlas = ExtResource("2_to4g8")
-region = Rect2(0, 512, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bt1o8"]
-atlas = ExtResource("2_to4g8")
-region = Rect2(0, 512, 256, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xihvd"]
+atlas = ExtResource("2_kubb5")
+region = Rect2(3072, 1280, 1536, 1280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_msjpn"]
 atlas = ExtResource("3_dopi8")
@@ -74,16 +60,19 @@ region = Rect2(3072, 1280, 1536, 1280)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wl1bi")
+"texture": SubResource("AtlasTexture_b4x8h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s6e4j")
+"texture": SubResource("AtlasTexture_nut35")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3ajt8")
+"texture": SubResource("AtlasTexture_60wr6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cvjnf")
+"texture": SubResource("AtlasTexture_7y2uj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e85qd")
 }],
 "loop": false,
 "name": &"attacking",
@@ -91,13 +80,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5eeg3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m55v8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0s6c0")
+"texture": ExtResource("3_jhifh")
 }],
 "loop": false,
 "name": &"death",
@@ -105,10 +88,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m6nni")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bt1o8")
+"texture": SubResource("AtlasTexture_xihvd")
 }],
 "loop": false,
 "name": &"hurt",
@@ -153,9 +133,8 @@ pixel_size = 0.009
 billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_u8br5")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
-frame_progress = 0.303039
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_20sp7")
@@ -172,3 +151,6 @@ top_level = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 collision_mask = 3
 hit_from_inside = true
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
