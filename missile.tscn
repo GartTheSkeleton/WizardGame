@@ -72,7 +72,6 @@ animation = &"pop"
 autoplay = "idle"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 visible = false
 mesh = SubResource("BoxMesh_ktedk")
 

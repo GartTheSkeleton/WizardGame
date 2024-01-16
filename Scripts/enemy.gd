@@ -18,7 +18,7 @@ var active = false
 var chasing = false
 var hurt = false
 var hurt_timer = 0
-var hp = 1
+var hp = 3
 var angle_to_player = 0
 var sees_player = false
 var dir

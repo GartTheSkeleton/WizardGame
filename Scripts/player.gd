@@ -10,7 +10,7 @@ extends CharacterBody3D
 
 #call variables
 const SPEED = 6.0
-const MOUSE_SENS = 0.5
+const MOUSE_SENS = 0.4
 const gravity = 0.7
 
 var truespeed = SPEED
@@ -31,6 +31,7 @@ var idle_length = 160
 var idle = true
 var last_spell = 0
 var spell
+var next_anim
 
 var maxhp = 100
 var hp = 100
@@ -81,52 +82,40 @@ func _input(event):
 		#print(camera.transform)
 
 func _process(delta):
+	print(animated_sprite_2d.animation)
 	#update the UI at the start of the frame instead of the end because why not
 	update_ui()
 	
 	#we need truespeed in order to sprint - this should get refactored
 	truespeed = SPEED
 	
-	#check if we're idling after a spell for animation purposes
-	if idle == false:
-		if idle_timer > 0:
-			idle_timer -= 1
-		else:
-			idle = true
-			animated_sprite_2d.play("idle")
-	
-	#check for weapon switching
-#	if Input.is_action_just_pressed("scroll_down"):
-#		if curr_spell == 0:
-#			curr_spell = spells.size() - 1
-#		else:
-#			curr_spell -= 1
-#	if Input.is_action_just_pressed("scroll_up"):
-#		if curr_spell == spells.size() - 1:
-#			curr_spell = 0
-#		else:
-#			curr_spell += 1
 	
 	if Input.is_action_just_pressed("switch_action"):
 		print("Switched Action")
 	if Input.is_action_just_pressed("switch_weapon"):
 		if curr_spell < 2:
 			curr_spell += 1
+			swap_weapon()
 		else:
 			curr_spell = 0
-		print(curr_spell)
+			swap_weapon()
+
 			
 	if Input.is_action_just_pressed("press_1"):
 		if curr_spell != 0:
 			curr_spell = 0
+			swap_weapon()
 	if Input.is_action_just_pressed("press_2"):
 		if curr_spell != 1:
 			curr_spell = 1
+			swap_weapon()
 	if Input.is_action_just_pressed("press_3"):
 		if curr_spell != 2:
 			curr_spell = 2
+			swap_weapon()
+			
 
-	#Check quite/restart inputs
+	#Check quit and restart inputs
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
 	if Input.is_action_just_pressed("restart"):
@@ -258,14 +247,14 @@ func shoot():
 func shoot_anim_done(): #logic that applies after the shoot animation finishes
 	can_shoot = true
 	
-	match last_spell:
+	match curr_spell:
 		0:
 			animated_sprite_2d.play("missile idle")
 		1:
 			animated_sprite_2d.play("hex idle")
 		2:
 			animated_sprite_2d.play("blast idle")
-	#animated_sprite_2d.play("idle")
+
 
 func kill():
 	dead = true
@@ -282,12 +271,12 @@ func arcane_shot(): #spawns an Arcane Shot
 	get_parent().add_child(spell)
 
 	
-func spawn_missile(): #spawns an Arcane Missile
+func spawn_missile(): #spawns an Burst Missile
 	
 	await get_tree().create_timer(0.5).timeout
 	spell = arcane_missile.instantiate()
 	spell.type = 1
-	spell.damage = spell_damage
+	spell.damage = (spell_damage/2)
 	spell.position = ray_cast_3d.global_position
 	spell.transform.basis = ray_cast_3d.global_transform.basis
 	get_parent().add_child(spell)
@@ -301,6 +290,15 @@ func burst_shot(): #Burst Shot of Arcane Missiles
 	await get_tree().create_timer(0.1).timeout
 	spawn_missile()
 	
+func swap_weapon():
+	if can_shoot == true:
+		match curr_spell:
+			0:
+				animated_sprite_2d.play("missile idle")
+			1:
+				animated_sprite_2d.play("hex idle")
+			2:
+				animated_sprite_2d.play("blast idle")
 
 func update_ui(): #UI Logic
 	var uitext = "HP: " + str(hp) + " MANA: " + str(floor(mana)) + " MANATIMER: " + str(manatimer)

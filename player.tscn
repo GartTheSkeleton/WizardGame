@@ -679,7 +679,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.125324, 0)
 shape = SubResource("CapsuleShape3D_7xmbu")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.624676, 0.15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0.15)
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -1000)
@@ -704,7 +704,7 @@ grow_vertical = 0
 position = Vector2(308, -216)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_2ouaf")
-animation = &"blast idle"
+animation = &"blast cast"
 autoplay = "idle"
 
 [node name="LeftHand" type="AnimatedSprite2D" parent="CanvasLayer/GunBase"]
