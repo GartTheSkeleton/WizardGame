@@ -39,6 +39,8 @@ var mana = 100
 var manatimer = 0
 var manatimerlength = 80
 
+var spell_damage = 5
+
 var shield = 0
 
 var jumpstr = 14
@@ -274,6 +276,7 @@ func arcane_shot(): #spawns an Arcane Shot
 	await get_tree().create_timer(0.2).timeout
 	spell = arcane_missile.instantiate()
 	spell.type = 0
+	spell.damage = spell_damage
 	spell.position = ray_cast_3d.global_position
 	spell.transform.basis = ray_cast_3d.global_transform.basis
 	get_parent().add_child(spell)
@@ -284,6 +287,7 @@ func spawn_missile(): #spawns an Arcane Missile
 	await get_tree().create_timer(0.5).timeout
 	spell = arcane_missile.instantiate()
 	spell.type = 1
+	spell.damage = spell_damage
 	spell.position = ray_cast_3d.global_position
 	spell.transform.basis = ray_cast_3d.global_transform.basis
 	get_parent().add_child(spell)

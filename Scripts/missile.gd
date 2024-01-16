@@ -5,6 +5,7 @@ var type = 0
 var dead = false
 var range
 var timer
+var damage = 5
 var target_type = ""
 var ignore_type = ""
 
@@ -36,6 +37,7 @@ func _ready():
 func _physics_process(delta):
 	if timer <= 0:
 		animated_sprite.play("pop")
+		print(damage)
 		dead = true
 	timer -= 1
 	
@@ -44,15 +46,18 @@ func _physics_process(delta):
 			
 			if ray.get_collider().is_in_group(target_type):
 				animated_sprite.play("pop")
+				print(damage)
 				dead = true
 				
 				if ray.get_collider().has_method("kill"):
 					if ray.get_collider().hp > 0:
-						ray.get_collider().hp -= 1
+						ray.get_collider().hp -= damage
 						ray.get_collider().hurt = true
 						ray.get_collider().hurt_timer = 10
 						ray.get_collider().dir = ray.get_collider().global_position - global_position
 						ray.get_collider().dir.y = 0.0
+						if ray.get_collider().hp <= 0:
+							ray.get_collider().kill()
 					else:
 						ray.get_collider().kill()
 			else:

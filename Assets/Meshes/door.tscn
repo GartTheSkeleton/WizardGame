@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dc51l1g41i3m5"]
+[gd_scene load_steps=7 format=3 uid="uid://dc51l1g41i3m5"]
 
 [ext_resource type="Texture2D" uid="uid://cax2bpb5v4iao" path="res://Assets/Images/door.png" id="1_g4lik"]
+[ext_resource type="Script" path="res://Assets/Meshes/door.gd" id="1_i8dcy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sc0gp"]
 atlas = ExtResource("1_g4lik")
@@ -32,15 +33,16 @@ animations = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_tqx3n"]
 
 [node name="Door" type="Node3D"]
+script = ExtResource("1_i8dcy")
 
-[node name="Window2" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(-6.77527e-08, 0, 1.55, 0, 1.55, 0, -1.55, 0, -6.77527e-08, 1, 4, -4)
+[node name="Doorsprite" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(-6.77527e-08, 0, 1.55, 0, 1.55, 0, -1.55, 0, -6.77527e-08, 0, 4, 0)
 sprite_frames = SubResource("SpriteFrames_0hjx1")
 animation = &"closed"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Window2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Doorsprite"]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 
-[node name="Sprite3D" type="CollisionShape3D" parent="Window2/StaticBody3D"]
+[node name="Sprite3D" type="CollisionShape3D" parent="Doorsprite/StaticBody3D"]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_tqx3n")
