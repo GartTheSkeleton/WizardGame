@@ -271,6 +271,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, -12, -14)
 [node name="Node3D938" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, -12, -18)
 
+[node name="Node3D967" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, -12, -22)
+
 [node name="Node3D935" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, -12, -22)
 
@@ -2707,14 +2710,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, -2, -10)
 [node name="Node3D263" parent="NavigationRegion3D/Environment" instance=ExtResource("10_q0478")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, -2, -10)
 
-[node name="Node3D264" parent="NavigationRegion3D/Environment" instance=ExtResource("10_q0478")]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 37, -2.73772, -8.7631)
-
-[node name="Node3D930" parent="NavigationRegion3D/Environment" instance=ExtResource("10_q0478")]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 37, -4.73772, -12.2631)
-
-[node name="Node3D931" parent="NavigationRegion3D/Environment" instance=ExtResource("10_q0478")]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 37, -6.73772, -15.7631)
+[node name="Node3D966" parent="NavigationRegion3D/Environment" instance=ExtResource("10_q0478")]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 2.5, 0, -0.5, 4.33013, 37, -6.73772, -15.6631)
 
 [node name="Node3D265" parent="NavigationRegion3D/Environment" instance=ExtResource("10_q0478")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41, -2, -10)
