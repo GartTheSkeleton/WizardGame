@@ -5,7 +5,6 @@
 [ext_resource type="AudioStream" uid="uid://cvrq385m34nc5" path="res://Audio/revolver_shot1.wav" id="3_f5mhc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xmbu"]
-height = 1.8
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u8q11"]
 atlas = ExtResource("2_805pc")

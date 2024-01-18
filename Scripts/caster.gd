@@ -28,6 +28,7 @@ func attack_player():
 	super()
 	
 	if ai_state == "attacking":
+		
 		if attacked == false:	
 			if cooldown <= 0:
 				Head.look_at(player.global_transform.origin + Vector3(0,-.5,0), Vector3.UP)

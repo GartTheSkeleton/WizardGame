@@ -12,12 +12,24 @@ albedo_texture = ExtResource("2_lvfjr")
 [node name="Node3D" type="Node3D"]
 
 [node name="Window2" type="Sprite3D" parent="."]
-transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 1, 4, -4)
+transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 1.9, 3.9, -4)
+double_sided = false
 texture = ExtResource("1_wyoh5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Window2"]
 
 [node name="Sprite3D" type="CollisionShape3D" parent="Window2/StaticBody3D"]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_433t2")
+
+[node name="Window3" type="Sprite3D" parent="."]
+transform = Transform3D(1.04907e-07, 0, -0.8, 0, 0.8, 0, 0.8, 0, 1.04907e-07, 0.1, 3.9, -4)
+double_sided = false
+texture = ExtResource("1_wyoh5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Window3"]
+
+[node name="Sprite3D" type="CollisionShape3D" parent="Window3/StaticBody3D"]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_433t2")
 

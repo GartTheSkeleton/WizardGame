@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://s7kenfbkf6tp"]
+[gd_scene load_steps=5 format=3 uid="uid://dcou1n5d4sqtu"]
 
-[ext_resource type="Texture2D" uid="uid://csk1fau81gavn" path="res://Assets/Images/floor02.png" id="1_oiibf"]
+[ext_resource type="Texture2D" uid="uid://dk3ioed65x32c" path="res://Assets/Images/floor03.png" id="1_18m8j"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7k3wf"]
-albedo_texture = ExtResource("1_oiibf")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_an80x"]
+albedo_texture = ExtResource("1_18m8j")
 uv1_scale = Vector3(3, 2, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6bb4o"]
@@ -12,7 +12,7 @@ uv1_scale = Vector3(3, 2, 1)
 
 [node name="Cube" type="MeshInstance3D"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
-material_override = SubResource("StandardMaterial3D_7k3wf")
+material_override = SubResource("StandardMaterial3D_an80x")
 mesh = SubResource("BoxMesh_6bb4o")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
