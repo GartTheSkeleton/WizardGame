@@ -6,6 +6,9 @@ func  _ready():
 	aggro_radius = 2
 	move_speed = 4
 
+func _process(delta):
+	super(delta)
+
 
 func _physics_process(delta):
 	super(delta)

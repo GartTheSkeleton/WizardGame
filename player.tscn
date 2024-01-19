@@ -807,3 +807,6 @@ horizontal_alignment = 1
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_f5mhc")
 bus = &"Sfx"
+
+[node name="BlastNode" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.313793, -3.99316)

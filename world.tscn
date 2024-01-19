@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://potr8w0bcnms"]
+[gd_scene load_steps=7 format=3 uid="uid://potr8w0bcnms"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_jtd37"]
 [ext_resource type="PackedScene" uid="uid://2go8h24o332j" path="res://player.tscn" id="1_n0l67"]
+[ext_resource type="PackedScene" uid="uid://caadawojui2bv" path="res://spider.tscn" id="4_5wdyw"]
+[ext_resource type="PackedScene" uid="uid://dlkueipxrdaov" path="res://giant_floater.tscn" id="4_r1vim"]
+[ext_resource type="PackedScene" uid="uid://lda1fr4p262a" path="res://caster.tscn" id="5_5ug7t"]
 
 [sub_resource type="Environment" id="Environment_2bx7j"]
 background_mode = 1
@@ -15,3 +18,12 @@ environment = SubResource("Environment_2bx7j")
 
 [node name="Player" parent="." instance=ExtResource("1_n0l67")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 15)
+
+[node name="Node3D" parent="." instance=ExtResource("4_5wdyw")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 1, 2, 2)
+
+[node name="Enemy" parent="." instance=ExtResource("4_r1vim")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -17)
+
+[node name="Caster" parent="." instance=ExtResource("5_5ug7t")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -4, 1, 2)

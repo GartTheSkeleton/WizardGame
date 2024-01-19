@@ -31,6 +31,8 @@ var adjusttimer = 12
 var my_cooldown = 10
 var cooldown = my_cooldown
 
+var blasttimer = 0
+
 func _ready():
 	animated_sprite_3d.animation_finished.connect(anim_done) 
 	
@@ -44,7 +46,8 @@ func _ready():
 	
 func _process(delta):
 #	print(player_ray.get_collider())
-	pass
+	if blasttimer > 0:
+		blasttimer -= 1
 
 func _physics_process(delta):
 	if dead:
@@ -69,8 +72,7 @@ func _physics_process(delta):
 			if active == false:
 				active = true
 				print("I HAVE ACTIVATED")
-	else:
-		result.collider.queue_free
+
 		
 	#	print("Colliding")
 

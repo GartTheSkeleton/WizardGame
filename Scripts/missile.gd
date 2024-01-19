@@ -1,5 +1,7 @@
 extends Node3D
 
+class_name Missile
+
 var SPEED = 40
 var type = 0
 var dead = false

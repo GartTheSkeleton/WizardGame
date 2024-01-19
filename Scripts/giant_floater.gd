@@ -35,3 +35,6 @@ func attack_player():
 				cooldown = my_cooldown
 				attacked = true
 				ai_state = "idle"
+				
+func is_enemy():
+	super()

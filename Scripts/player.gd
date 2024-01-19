@@ -7,6 +7,17 @@ extends CharacterBody3D
 @onready var health_bar = $CanvasLayer/UI/Label
 @onready var camera = $Camera3D
 @onready var tutorial = $CanvasLayer/Label
+@onready var blast_pos = $BlastNode
+@onready var blast_pos2 = $BlastNode2
+@onready var blast_pos3 = $BlastNode3
+@onready var blast_pos4 = $BlastNode4
+@onready var blast_pos5 = $BlastNode5
+@onready var blast_pos6 = $BlastNode6
+@onready var blast_pos7 = $BlastNode7
+@onready var blast_pos8 = $BlastNode8
+@onready var blast_pos9 = $BlastNode9
+@onready var blast_pos10 = $BlastNode10
+@onready var blast_pos11 = $BlastNode11
 
 #call variables
 const SPEED = 6.0
@@ -42,6 +53,8 @@ var manatimerlength = 80
 
 var spell_damage = 5
 
+var blasting = false
+
 var shield = 0
 
 var jumpstr = 14
@@ -53,6 +66,7 @@ var offset = 0
 
 #preloading the spell objects
 var arcane_missile = preload("res://missile.tscn")
+var blast = preload("res://blast.tscn")
 
 var tutorial_counter = 300
 
@@ -82,7 +96,6 @@ func _input(event):
 		#print(camera.transform)
 
 func _process(delta):
-	print(animated_sprite_2d.animation)
 	#update the UI at the start of the frame instead of the end because why not
 	update_ui()
 	
@@ -130,15 +143,18 @@ func _process(delta):
 		shoot()
 		
 	#Sprint logic
-	if Input.is_action_pressed("sprint") and tired == false:
-		stamina -= 1
-		if stamina <= 0:
-			tired = true
-		else:
-			truespeed = SPEED + 6
-	else: if stamina < maxstamina and tired == false:
-		stamina += 1
-	
+	if blasting == false:
+		if Input.is_action_pressed("sprint") and tired == false:
+			stamina -= 1
+			if stamina <= 0:
+				tired = true
+			else:
+				truespeed = SPEED + 6
+		else: if stamina < maxstamina and tired == false:
+			stamina += 1
+	else:
+		truespeed = 4
+		
 	if tired == true:
 		if stamina < maxstamina:
 			stamina += 1
@@ -241,11 +257,15 @@ func shoot():
 				animated_sprite_2d.play("blast cast")
 				last_spell = curr_spell
 				manatimer = manatimerlength
+				blast_shot()
 
 	idle_timer = idle_length #Set the timer for idle animations
 
 func shoot_anim_done(): #logic that applies after the shoot animation finishes
 	can_shoot = true
+	
+	if blasting == true:
+		blasting = false
 	
 	match curr_spell:
 		0:
@@ -289,7 +309,78 @@ func burst_shot(): #Burst Shot of Arcane Missiles
 	spawn_missile()
 	await get_tree().create_timer(0.1).timeout
 	spawn_missile()
+
+func blast_shot():
+	blasting = true
 	
+	
+	spell = blast.instantiate()
+	spell.damage = spell_damage
+	spell.position = blast_pos.global_position
+	spell.transform.basis = global_transform.basis
+	get_parent().add_child(spell)
+	
+#	spell = blast.instantiate()
+#	spell.damage = spell_damage
+#	spell.position = blast_pos2.global_position
+#	spell.transform.basis = global_transform.basis
+#	get_parent().add_child(spell)
+#
+#	spell = blast.instantiate()
+#	spell.damage = spell_damage
+#	spell.position = blast_pos3.global_position
+#	spell.transform.basis = global_transform.basis
+#	get_parent().add_child(spell)
+#
+#	spell = blast.instantiate()
+#	spell.damage = spell_damage
+#	spell.position = blast_pos4.global_position
+#	spell.transform.basis = global_transform.basis
+#	get_parent().add_child(spell)
+#
+#	spell = blast.instantiate()
+#	spell.damage = spell_damage
+#	spell.position = blast_pos5.global_position
+#	spell.transform.basis = global_transform.basis
+#	get_parent().add_child(spell)
+#
+#	spell = blast.instantiate()
+#	spell.damage = spell_damage
+#	spell.position = blast_pos6.global_position
+#	spell.transform.basis = global_transform.basis
+#	get_parent().add_child(spell)
+#
+#	spell = blast.instantiate()
+#	spell.damage = spell_damage
+#	spell.position = blast_pos7.global_position
+#	spell.transform.basis = global_transform.basis
+#	get_parent().add_child(spell)
+#
+#	spell = blast.instantiate()
+#	spell.damage = spell_damage
+#	spell.position = blast_pos8.global_position
+#	spell.transform.basis = global_transform.basis
+#	get_parent().add_child(spell)
+#
+#	spell = blast.instantiate()
+#	spell.damage = spell_damage
+#	spell.position = blast_pos9.global_position
+#	spell.transform.basis = global_transform.basis
+#	get_parent().add_child(spell)
+#
+#	spell = blast.instantiate()
+#	spell.damage = spell_damage
+#	spell.position = blast_pos10.global_position
+#	spell.transform.basis = global_transform.basis
+#	get_parent().add_child(spell)
+#
+#	spell = blast.instantiate()
+#	spell.damage = spell_damage
+#	spell.position = blast_pos11.global_position
+#	spell.transform.basis = global_transform.basis
+#	get_parent().add_child(spell)
+
+
 func swap_weapon():
 	if can_shoot == true:
 		match curr_spell:

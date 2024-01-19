@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://cl46o1x4ukuqr"]
+
+[ext_resource type="Script" path="res://blast.gd" id="1_m42f7"]
+[ext_resource type="Texture2D" uid="uid://c70ul82wuwcnq" path="res://Assets/Images/missile splode.png" id="2_4xhbb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a028w"]
+atlas = ExtResource("2_4xhbb")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kofo"]
+atlas = ExtResource("2_4xhbb")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2k8c3"]
+atlas = ExtResource("2_4xhbb")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgxm4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a028w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a028w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kofo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kofo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2k8c3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2k8c3")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fci7g"]
+
+[node name="Blast" type="Node3D"]
+script = ExtResource("1_m42f7")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bgxm4")
+autoplay = "default"
+frame = 4
+frame_progress = 0.360291
+
+[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+sprite_frames = SubResource("SpriteFrames_bgxm4")
+autoplay = "default"
+frame = 4
+frame_progress = 0.360291
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0, 0)
+shape = SubResource("SphereShape3D_fci7g")
