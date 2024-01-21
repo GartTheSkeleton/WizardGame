@@ -6430,6 +6430,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -15, -54)
 
 [node name="Door" parent="." instance=ExtResource("16_6bccy")]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -34, 0, -15)
+type = 1
 
 [node name="Door3" parent="." instance=ExtResource("16_6bccy")]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -34, 12, -15)

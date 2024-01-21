@@ -7,7 +7,15 @@ var locked = false
 @onready var my_sprite2 = $Doorsprite2
 @onready var my_body = $Doorsprite/StaticBody3D/Sprite3D
 @onready var collisionshape = $Doorsprite/CollisionShape3D
+@onready var lock_sprite1 = $Locksprite
+@onready var lock_sprite2 = $Locksprite2
 @onready var player : CharacterBody3D = get_tree().get_first_node_in_group("player")
+
+@export var type = 0
+#0 = none
+#1 = green
+#2 = yellow
+#3 =
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,10 +26,24 @@ func _ready():
 func _process(delta):
 	var dist_to_player = global_position.distance_to(player.global_position)
 	
-	if dist_to_player < 4:
-		open = true
+	if dist_to_player <= 4:
+		if type == 0:
+			open = true
+			lock_sprite1.visible = false
+			lock_sprite2.visible = false
+		else:
+			lock_sprite1.visible = true
+			lock_sprite2.visible = true
+			match type:
+				1: #green
+					if player.curr_spell == 1:
+						type = 0
+				2: #yellow
+					pass
 	else:
-		open = false
+			open = false
+
+		
 
 	if open == true:
 		my_sprite.play("open")
