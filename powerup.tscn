@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://hrx3uw53fs1"]
+
+[ext_resource type="Script" path="res://powerup.gd" id="1_3nd48"]
+[ext_resource type="Texture2D" uid="uid://qb5ocg62qc8" path="res://Assets/Images/icon.svg" id="1_gckbh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s2s3u"]
+
+[node name="Powerup" type="Node3D"]
+script = ExtResource("1_3nd48")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_gckbh")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+visible = false
+texture = ExtResource("1_gckbh")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("SphereShape3D_s2s3u")

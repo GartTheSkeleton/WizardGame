@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 #import references
 @onready var animated_sprite_2d = $CanvasLayer/GunBase/AnimatedSprite2D
+@onready var offhand_sprite = $CanvasLayer/GunBase/LeftHand
 @onready var ray_cast_3d = $Camera3D/RayCast3D
 @onready var shoot_sound = $ShootSound
 @onready var health_bar = $CanvasLayer/UI/Label
@@ -26,6 +27,7 @@ const gravity = 0.7
 
 var truespeed = SPEED
 var can_shoot = true
+var can_offhand = true
 var dead = false
 var running = false
 var stamina = 200
@@ -35,14 +37,25 @@ var tired = false
 var hurt = false
 var hurt_timer = 0
 
+var has_green = false
+var has_red = false
+var has_yellow = false
+var has_cyan = false
+var has_black = false
+
 var curr_spell = 0
 var spells = ["Magic Missile","Hexing Beam"]
+var curr_offhand = 0
+var offhands = ["Heal", "Shield", "Force"]
 var idle_timer = 0
 var idle_length = 160
 var idle = true
 var last_spell = 0
 var spell
+var maxspell = 0
 var next_anim
+var offhand
+var maxoffhand = 0
 
 var maxhp = 100
 var hp = 100
@@ -102,11 +115,26 @@ func _process(delta):
 	#we need truespeed in order to sprint - this should get refactored
 	truespeed = SPEED
 	
+	if has_green == true:
+		maxspell = 1
+	if has_red == true:
+		maxspell = 2
+	if has_yellow == true:
+		maxoffhand = 1
+	if has_cyan == true:
+		maxoffhand = 2
+	if has_black == true:
+		maxoffhand = 3
 	
 	if Input.is_action_just_pressed("switch_action"):
-		print("Switched Action")
+		if curr_offhand < maxoffhand:
+			curr_offhand += 1
+			swap_offhand()
+		else:
+			curr_offhand = 0
+			swap_offhand()
 	if Input.is_action_just_pressed("switch_weapon"):
-		if curr_spell < 2:
+		if curr_spell < maxspell:
 			curr_spell += 1
 			swap_weapon()
 		else:
@@ -118,7 +146,7 @@ func _process(delta):
 		if curr_spell != 0:
 			curr_spell = 0
 			swap_weapon()
-	if Input.is_action_just_pressed("press_2"):
+	if Input.is_action_just_pressed("press_2") and has_green == true:
 		if curr_spell != 1:
 			curr_spell = 1
 			swap_weapon()
@@ -320,65 +348,6 @@ func blast_shot():
 	spell.transform.basis = global_transform.basis
 	get_parent().add_child(spell)
 	
-#	spell = blast.instantiate()
-#	spell.damage = spell_damage
-#	spell.position = blast_pos2.global_position
-#	spell.transform.basis = global_transform.basis
-#	get_parent().add_child(spell)
-#
-#	spell = blast.instantiate()
-#	spell.damage = spell_damage
-#	spell.position = blast_pos3.global_position
-#	spell.transform.basis = global_transform.basis
-#	get_parent().add_child(spell)
-#
-#	spell = blast.instantiate()
-#	spell.damage = spell_damage
-#	spell.position = blast_pos4.global_position
-#	spell.transform.basis = global_transform.basis
-#	get_parent().add_child(spell)
-#
-#	spell = blast.instantiate()
-#	spell.damage = spell_damage
-#	spell.position = blast_pos5.global_position
-#	spell.transform.basis = global_transform.basis
-#	get_parent().add_child(spell)
-#
-#	spell = blast.instantiate()
-#	spell.damage = spell_damage
-#	spell.position = blast_pos6.global_position
-#	spell.transform.basis = global_transform.basis
-#	get_parent().add_child(spell)
-#
-#	spell = blast.instantiate()
-#	spell.damage = spell_damage
-#	spell.position = blast_pos7.global_position
-#	spell.transform.basis = global_transform.basis
-#	get_parent().add_child(spell)
-#
-#	spell = blast.instantiate()
-#	spell.damage = spell_damage
-#	spell.position = blast_pos8.global_position
-#	spell.transform.basis = global_transform.basis
-#	get_parent().add_child(spell)
-#
-#	spell = blast.instantiate()
-#	spell.damage = spell_damage
-#	spell.position = blast_pos9.global_position
-#	spell.transform.basis = global_transform.basis
-#	get_parent().add_child(spell)
-#
-#	spell = blast.instantiate()
-#	spell.damage = spell_damage
-#	spell.position = blast_pos10.global_position
-#	spell.transform.basis = global_transform.basis
-#	get_parent().add_child(spell)
-#
-#	spell = blast.instantiate()
-#	spell.damage = spell_damage
-#	spell.position = blast_pos11.global_position
-#	spell.transform.basis = global_transform.basis
-#	get_parent().add_child(spell)
 
 
 func swap_weapon():
@@ -390,6 +359,16 @@ func swap_weapon():
 				animated_sprite_2d.play("hex idle")
 			2:
 				animated_sprite_2d.play("blast idle")
+				
+func swap_offhand():
+	if can_offhand == true:
+		match curr_offhand:
+			0:
+				offhand_sprite.play("healidle")
+			1:
+				offhand_sprite.play("shieldidle")
+			2:
+				offhand_sprite.play("forceidle")
 
 func update_ui(): #UI Logic
 	var uitext = "HP: " + str(hp) + " MANA: " + str(floor(mana)) + " MANATIMER: " + str(manatimer)

@@ -15,11 +15,35 @@ var locked = false
 #0 = none
 #1 = green
 #2 = yellow
-#3 =
+#3 = cyan
+#4 = red
+#5 = black
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if type == 0:
+		open = true
+		lock_sprite1.visible = false
+		lock_sprite2.visible = false
+	else:
+		match type:
+			1:
+				lock_sprite1.play("green_lock")
+				lock_sprite2.play("green_lock")
+			2:
+				lock_sprite1.play("yellow_lock")
+				lock_sprite2.play("yellow_lock")
+			3:
+				lock_sprite1.play("cyan_lock")
+				lock_sprite2.play("cyan_lock")
+			4:
+				lock_sprite1.play("red_lock")
+				lock_sprite2.play("red_lock")
+			4:
+				lock_sprite1.play("black_lock")
+				lock_sprite2.play("black_lock")
+		lock_sprite1.visible = true
+		lock_sprite2.visible = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -39,7 +63,17 @@ func _process(delta):
 					if player.curr_spell == 1:
 						type = 0
 				2: #yellow
-					pass
+					if player.curr_offhand == 1:
+						type = 0
+				3: #cyan
+					if player.curr_offhand == 2:
+						type = 0
+				4: #red
+					if player.curr_spell == 2:
+						type = 0
+				5: #black
+					if player.curr_offhand == 3:
+						type = 0
 	else:
 			open = false
 

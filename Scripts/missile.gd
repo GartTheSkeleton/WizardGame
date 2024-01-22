@@ -39,7 +39,7 @@ func _ready():
 func _physics_process(delta):
 	if timer <= 0:
 		animated_sprite.play("pop")
-		print(damage)
+		#print(damage)
 		dead = true
 	timer -= 1
 	
