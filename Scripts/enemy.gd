@@ -4,6 +4,8 @@ class_name Enemy
 
 @onready var animated_sprite_3d = $AnimatedSprite3D
 
+var xp_pellet = preload("res://xp_pickup.tscn")
+
 @export var move_speed = 3
 @export var attack_range = 2.0
 
@@ -18,7 +20,9 @@ var active = false
 var chasing = false
 var hurt = false
 var hurt_timer = 0
-var hp = 3
+var hurt_time = 10
+@export var hp = 3
+@export var xp = 2
 var angle_to_player = 0
 var sees_player = false
 var dir
@@ -139,6 +143,11 @@ func kill():
 	dead = true
 	animated_sprite_3d.play("death")
 	$CollisionShape3D.disabled = true
+	for i in xp:
+		var pellet
+		pellet = xp_pellet.instantiate()
+		pellet.position = Vector3(position.x,position.y+1,position.z)
+		get_parent().add_child(pellet)
 
 func anim_done():
 	if !dead:

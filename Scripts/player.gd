@@ -9,16 +9,6 @@ extends CharacterBody3D
 @onready var camera = $Camera3D
 @onready var tutorial = $CanvasLayer/Label
 @onready var blast_pos = $BlastNode
-@onready var blast_pos2 = $BlastNode2
-@onready var blast_pos3 = $BlastNode3
-@onready var blast_pos4 = $BlastNode4
-@onready var blast_pos5 = $BlastNode5
-@onready var blast_pos6 = $BlastNode6
-@onready var blast_pos7 = $BlastNode7
-@onready var blast_pos8 = $BlastNode8
-@onready var blast_pos9 = $BlastNode9
-@onready var blast_pos10 = $BlastNode10
-@onready var blast_pos11 = $BlastNode11
 
 #call variables
 const SPEED = 6.0
@@ -36,6 +26,7 @@ var tired = false
 
 var hurt = false
 var hurt_timer = 0
+var hurt_time = 10
 
 var has_green = false
 var has_red = false
@@ -64,7 +55,7 @@ var mana = 100
 var manatimer = 0
 var manatimerlength = 80
 
-var spell_damage = 5
+var spell_damage = 2
 
 var blasting = false
 

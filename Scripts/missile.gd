@@ -14,22 +14,27 @@ var ignore_type = ""
 @onready var mesh = $MeshInstance3D
 @onready var ray = $RayCast3D
 @onready var animated_sprite = $AnimatedSprite3D
+@onready var spread_shot = $Node3D
 
 func _ready():
 	animated_sprite.animation_finished.connect(anim_end) 
+	
+	
 	match type:
 		0:
 			SPEED = 90
 			ray.target_position.z = -2
 			range = 150
 			target_type = "Enemy"
+			ignore_type = "player"
 		1:
 			SPEED = 40
 			range = 60
 			ray.target_position.z = -2
 			target_type = "Enemy"
+			ignore_type = "player"
 		2:
-			SPEED = 20
+			SPEED = 30
 			range = 500
 			target_type = "player"
 			ignore_type = "Enemy"
@@ -49,13 +54,14 @@ func _physics_process(delta):
 			if ray.get_collider().is_in_group(target_type):
 				animated_sprite.play("pop")
 				print(damage)
+				print(ray.get_collider().hp)
 				dead = true
 				
 				if ray.get_collider().has_method("kill"):
 					if ray.get_collider().hp > 0:
 						ray.get_collider().hp -= damage
 						ray.get_collider().hurt = true
-						ray.get_collider().hurt_timer = 10
+						ray.get_collider().hurt_timer = ray.get_collider().hurt_time
 						ray.get_collider().dir = ray.get_collider().global_position - global_position
 						ray.get_collider().dir.y = 0.0
 						if ray.get_collider().hp <= 0:
@@ -68,7 +74,6 @@ func _physics_process(delta):
 				else:
 					animated_sprite.play("pop")
 					dead = true
-
 		else:
 			position += transform.basis * Vector3(0,0,-SPEED) * delta
 		

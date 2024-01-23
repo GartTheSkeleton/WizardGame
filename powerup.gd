@@ -23,7 +23,6 @@ func _process(delta):
 	sprite2.rotation_degrees.y += 1
 	
 	if trigger.has_overlapping_bodies():
-		print("colliding")
 		var collisions = trigger.get_overlapping_bodies()
 		for i in len(collisions):
 			if collisions[i].has_method("is_player"):

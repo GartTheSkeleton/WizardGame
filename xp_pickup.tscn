@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl6nxn1f6dwfj"]
+
+[ext_resource type="Texture2D" uid="uid://qb5ocg62qc8" path="res://Assets/Images/icon.svg" id="1_6l788"]
+[ext_resource type="Script" path="res://xp_pickup.gd" id="1_jwt0f"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_j3q2l"]
+
+[node name="Node3D" type="Area3D"]
+script = ExtResource("1_jwt0f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("SphereShape3D_j3q2l")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+texture = ExtResource("1_6l788")
