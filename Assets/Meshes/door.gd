@@ -39,7 +39,7 @@ func _ready():
 			4:
 				lock_sprite1.play("red_lock")
 				lock_sprite2.play("red_lock")
-			4:
+			5:
 				lock_sprite1.play("black_lock")
 				lock_sprite2.play("black_lock")
 		lock_sprite1.visible = true

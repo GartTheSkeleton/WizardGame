@@ -19,6 +19,9 @@ environment = SubResource("Environment_2bx7j")
 [node name="Player" parent="." instance=ExtResource("1_n0l67")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 18)
 
+[node name="Enemy" parent="." instance=ExtResource("4_r1vim")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.350677, 1)
+
 [node name="Enemy2" parent="." instance=ExtResource("4_r1vim")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -81)
 
@@ -30,6 +33,3 @@ transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -12, 1, 4)
 
 [node name="Caster" parent="." instance=ExtResource("5_5ug7t")]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -23, 0, 2)
-
-[node name="Enemy" parent="." instance=ExtResource("4_r1vim")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 4)
