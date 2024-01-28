@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var ray_cast_3d = $Camera3D/RayCast3D
 @onready var shoot_sound = $ShootSound
 @onready var health_bar = $CanvasLayer/UI/Label
+@onready var extra_text = $CanvasLayer/UI/Label2
 @onready var camera = $Camera3D
 @onready var tutorial = $CanvasLayer/Label
 @onready var blast_pos = $BlastNode
@@ -17,7 +18,7 @@ const gravity = 0.7
 
 var truespeed = SPEED
 var can_shoot = true
-var can_offhand = true
+var can_cast = true
 var dead = false
 var running = false
 var stamina = 200
@@ -46,7 +47,20 @@ var spell
 var maxspell = 0
 var next_anim
 var offhand
-var maxoffhand = 0
+var maxoffhand = 3
+var cooldown = 0
+
+var cyan_cooldown = 85
+var cyan_cooltime = 85
+
+var magenta_cooldown = 85
+var magenta_cooltime = 85
+
+var yellow_cooldown = 85
+var yellow_cooltime = 85
+
+var black_cooldown = 85
+var black_cooltime = 85
 
 var maxhp = 100
 var hp = 100
@@ -79,6 +93,7 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	#This triggers a function when the Hand Sprites finish playing an animation
 	animated_sprite_2d.animation_finished.connect(shoot_anim_done) 
+	offhand_sprite.animation_finished.connect(cast_anim_done)
 	#This lets the button on the deathscreen trigger a restart
 	$CanvasLayer/DeathScreen/Panel/Button.button_up.connect(restart)
 
@@ -116,7 +131,39 @@ func _process(delta):
 		maxoffhand = 2
 	if has_black == true:
 		maxoffhand = 3
+
+
+	if magenta_cooldown < magenta_cooltime:
+		magenta_cooldown += 1
+		if curr_offhand == 0:
+			can_cast = false
+	else:
+		if curr_offhand == 0:
+			can_cast = true
+	if yellow_cooldown < yellow_cooltime:
+		yellow_cooldown += 1
+		if curr_offhand == 1:
+			can_cast = false
+	else:
+		if curr_offhand == 1:
+			can_cast = true
+	if cyan_cooldown < cyan_cooltime:
+		cyan_cooldown += 1
+		if curr_offhand == 2:
+			can_cast = false
+	else:
+		if curr_offhand == 2:
+			can_cast = true
+	if black_cooldown < black_cooltime:
+		black_cooldown += 1
+		if curr_offhand == 3:
+			can_cast = false
+	else:
+		if curr_offhand == 3:
+			can_cast = true
 	
+	
+
 	if Input.is_action_just_pressed("switch_action"):
 		if curr_offhand < maxoffhand:
 			curr_offhand += 1
@@ -124,6 +171,7 @@ func _process(delta):
 		else:
 			curr_offhand = 0
 			swap_offhand()
+
 	if Input.is_action_just_pressed("switch_weapon"):
 		if curr_spell < maxspell:
 			curr_spell += 1
@@ -160,6 +208,9 @@ func _process(delta):
 	#check for shoot input
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
+	
+	if Input.is_action_just_pressed("cast"):
+		cast()
 		
 	#Sprint logic
 	if blasting == false:
@@ -246,6 +297,24 @@ func _physics_process(delta):
 func restart():
 	get_tree().reload_current_scene()
 
+func cast():
+	if !can_cast:
+		return
+	match curr_spell:
+		0:
+			magenta_cooldown = 0
+			offhand_sprite.play("healcast")
+		1:
+			yellow_cooldown = 0
+			offhand_sprite.play("shieldcast")
+		2:
+			cyan_cooldown = 0
+			offhand_sprite.play("forcecast")
+		3:
+			black_cooldown = 0
+			offhand_sprite.play("oncooldown")
+
+
 func shoot():
 	if !can_shoot:
 		return
@@ -293,6 +362,9 @@ func shoot_anim_done(): #logic that applies after the shoot animation finishes
 			animated_sprite_2d.play("hex idle")
 		2:
 			animated_sprite_2d.play("blast idle")
+			
+func cast_anim_done():
+	offhand_sprite.play("oncooldown")
 
 
 func kill():
@@ -352,18 +424,25 @@ func swap_weapon():
 				animated_sprite_2d.play("blast idle")
 				
 func swap_offhand():
-	if can_offhand == true:
+	if can_cast == true:
 		match curr_offhand:
 			0:
 				offhand_sprite.play("healidle")
+				can_cast = false
 			1:
 				offhand_sprite.play("shieldidle")
+				can_cast = false
 			2:
 				offhand_sprite.play("forceidle")
+				can_cast = false
+	else:
+		offhand_sprite.play("oncooldown")
 
 func update_ui(): #UI Logic
-	var uitext = "HP: " + str(hp) + " MANA: " + str(floor(mana)) + " MANATIMER: " + str(manatimer)
+	var uitext = "HP: " + str(hp) + " MANA: " + str(floor(mana))
+	var uitext2 = "Magenta: " + str(magenta_cooldown) + "Yellow: " + str(yellow_cooldown) + "Cyan: " + str(cyan_cooldown)
 	health_bar.text = uitext
+	extra_text.text = uitext2
 	
 	
 	tutorial_counter -= 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://2go8h24o332j"]
+[gd_scene load_steps=90 format=3 uid="uid://2go8h24o332j"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_kvxj2"]
 [ext_resource type="Texture2D" uid="uid://5kx1fe8i7rqw" path="res://Assets/Images/WizardHands Sheet.png" id="2_805pc"]
@@ -491,7 +491,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0lnae")
 }],
-"loop": true,
+"loop": false,
 "name": &"forcecast",
 "speed": 5.0
 }, {
@@ -551,7 +551,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dlbtl")
 }],
-"loop": true,
+"loop": false,
 "name": &"healcast",
 "speed": 5.0
 }, {
@@ -619,7 +619,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l4g3r")
 }],
-"loop": true,
+"loop": false,
 "name": &"shieldcast",
 "speed": 5.0
 }, {
@@ -663,6 +663,9 @@ animations = [{
 "name": &"shieldrecharge",
 "speed": 5.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gtuog"]
+font_size = 28
 
 [sub_resource type="LabelSettings" id="LabelSettings_ul0oy"]
 font_size = 39
@@ -710,10 +713,8 @@ autoplay = "missile idle"
 position = Vector2(-262, -216)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_4svt4")
-animation = &"forcecast"
+animation = &"shieldcast"
 autoplay = "healidle"
-frame = 3
-frame_progress = 0.78191
 
 [node name="Crosshair" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 8
@@ -792,6 +793,15 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_right = 1153.0
 offset_bottom = 105.0
+
+[node name="Label2" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 79.0
+offset_right = 1153.0
+offset_bottom = 105.0
+text = "gdsfhdsfgsdfgdsfgdsfgsdf"
+label_settings = SubResource("LabelSettings_gtuog")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
