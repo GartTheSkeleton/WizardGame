@@ -161,16 +161,14 @@ func _process(delta):
 	else:
 		if curr_offhand == 3:
 			can_cast = true
-	
-	
+
 
 	if Input.is_action_just_pressed("switch_action"):
 		if curr_offhand < maxoffhand:
 			curr_offhand += 1
-			swap_offhand()
 		else:
 			curr_offhand = 0
-			swap_offhand()
+
 
 	if Input.is_action_just_pressed("switch_weapon"):
 		if curr_spell < maxspell:
@@ -179,8 +177,8 @@ func _process(delta):
 		else:
 			curr_spell = 0
 			swap_weapon()
-
 			
+
 	if Input.is_action_just_pressed("press_1"):
 		if curr_spell != 0:
 			curr_spell = 0
@@ -303,16 +301,16 @@ func cast():
 	match curr_spell:
 		0:
 			magenta_cooldown = 0
-			offhand_sprite.play("healcast")
+			#offhand_sprite.play("healcast")
 		1:
 			yellow_cooldown = 0
-			offhand_sprite.play("shieldcast")
+			#offhand_sprite.play("shieldcast")
 		2:
 			cyan_cooldown = 0
-			offhand_sprite.play("forcecast")
+			#offhand_sprite.play("forcecast")
 		3:
 			black_cooldown = 0
-			offhand_sprite.play("oncooldown")
+			#offhand_sprite.play("oncooldown")
 
 
 func shoot():
@@ -364,7 +362,8 @@ func shoot_anim_done(): #logic that applies after the shoot animation finishes
 			animated_sprite_2d.play("blast idle")
 			
 func cast_anim_done():
-	offhand_sprite.play("oncooldown")
+	pass
+
 
 
 func kill():
@@ -424,19 +423,7 @@ func swap_weapon():
 				animated_sprite_2d.play("blast idle")
 				
 func swap_offhand():
-	if can_cast == true:
-		match curr_offhand:
-			0:
-				offhand_sprite.play("healidle")
-				can_cast = false
-			1:
-				offhand_sprite.play("shieldidle")
-				can_cast = false
-			2:
-				offhand_sprite.play("forceidle")
-				can_cast = false
-	else:
-		offhand_sprite.play("oncooldown")
+	pass
 
 func update_ui(): #UI Logic
 	var uitext = "HP: " + str(hp) + " MANA: " + str(floor(mana))

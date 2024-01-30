@@ -1,8 +1,9 @@
-[gd_scene load_steps=90 format=3 uid="uid://2go8h24o332j"]
+[gd_scene load_steps=91 format=3 uid="uid://2go8h24o332j"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_kvxj2"]
 [ext_resource type="Texture2D" uid="uid://5kx1fe8i7rqw" path="res://Assets/Images/WizardHands Sheet.png" id="2_805pc"]
 [ext_resource type="AudioStream" uid="uid://cvrq385m34nc5" path="res://Audio/revolver_shot1.wav" id="3_f5mhc"]
+[ext_resource type="Script" path="res://LeftHand.gd" id="3_rrdjs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xmbu"]
 
@@ -591,7 +592,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7nxei")
 }],
-"loop": true,
+"loop": false,
 "name": &"healrecharge",
 "speed": 5.0
 }, {
@@ -713,8 +714,9 @@ autoplay = "missile idle"
 position = Vector2(-262, -216)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_4svt4")
-animation = &"shieldcast"
+animation = &"healrecharge"
 autoplay = "healidle"
+script = ExtResource("3_rrdjs")
 
 [node name="Crosshair" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 8
