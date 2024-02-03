@@ -11,6 +11,8 @@ var locked = false
 @onready var lock_sprite2 = $Locksprite2
 @onready var player : CharacterBody3D = get_tree().get_first_node_in_group("player")
 
+
+
 @export var type = 0
 #0 = none
 #1 = green
@@ -21,6 +23,7 @@ var locked = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	lock_sprite1.animation_finished.connect(anim_done) 
 	if type == 0:
 		open = true
 		lock_sprite1.visible = false
@@ -53,27 +56,37 @@ func _process(delta):
 	if dist_to_player <= 4:
 		if type == 0:
 			open = true
-			lock_sprite1.visible = false
-			lock_sprite2.visible = false
+			#lock_sprite1.visible = false
+			#lock_sprite2.visible = false
 		else:
 			lock_sprite1.visible = true
 			lock_sprite2.visible = true
 			match type:
 				1: #green
 					if player.curr_spell == 1:
-						type = 0
+						#type = 0
+						lock_sprite1.play("green_unlock")
+						lock_sprite2.play("green_unlock")
 				2: #yellow
 					if player.curr_offhand == 1:
-						type = 0
+						#type = 0
+						lock_sprite1.play("yellow_unlock")
+						lock_sprite2.play("yellow_unlock")
 				3: #cyan
 					if player.curr_offhand == 2:
-						type = 0
+						#type = 0
+						lock_sprite1.play("cyan_unlock")
+						lock_sprite2.play("cyan_unlock")
 				4: #red
 					if player.curr_spell == 2:
-						type = 0
+						#type = 0
+						lock_sprite1.play("red_unlock")
+						lock_sprite2.play("red_unlock")
 				5: #black
 					if player.curr_offhand == 3:
-						type = 0
+						#type = 0
+						lock_sprite1.play("black_unlock")
+						lock_sprite2.play("black_unlock")
 	else:
 			open = false
 
@@ -89,3 +102,8 @@ func _process(delta):
 		my_sprite2.play("closed")
 		my_body.disabled = false
 		collisionshape.position.y = 0
+
+func anim_done():
+	type = 0
+	lock_sprite1.visible = false
+	lock_sprite2.visible = false
