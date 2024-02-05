@@ -714,8 +714,9 @@ autoplay = "missile idle"
 position = Vector2(-262, -216)
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_4svt4")
-animation = &"healrecharge"
+animation = &"shieldidle"
 autoplay = "healidle"
+frame_progress = 0.116153
 script = ExtResource("3_rrdjs")
 
 [node name="Crosshair" type="ColorRect" parent="CanvasLayer"]

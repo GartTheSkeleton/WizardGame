@@ -28,7 +28,7 @@ var sees_player = false
 var dir
 var ai_state = "idle"
 var type = 0
-var aggro_radius = 1.5
+var aggro_radius = 2
 var attacked = false
 var adjusttimer = 12
 
@@ -40,7 +40,7 @@ var blasttimer = 0
 func _ready():
 	animated_sprite_3d.animation_finished.connect(anim_done) 
 	
-	player_ray.set_target_position(player.global_position)
+	#player_ray.set_target_position(player.global_position)
 	
 	dir = Vector3(0,0,0)
 	
@@ -55,6 +55,8 @@ func _process(delta):
 
 func _physics_process(delta):
 	if dead:
+		if animated_sprite_3d.animation != "death":
+			animated_sprite_3d.animation = "death"
 		return
 	if player == null:
 		return
@@ -69,13 +71,13 @@ func _physics_process(delta):
 #	print(result.collider)
 #	print(player)
 #	print("ACTIVE:" + str(active))
-	
-	if result.collider == player:
-		if distanceToPlayer <= range:
-			#print("IN RANGE")
-			if active == false:
-				active = true
-				print("I HAVE ACTIVATED")
+	if result:
+		if result.collider == player:
+			if distanceToPlayer <= range:
+				#print("IN RANGE")
+				if active == false:
+					active = true
+					print("I HAVE ACTIVATED")
 
 		
 	#	print("Colliding")

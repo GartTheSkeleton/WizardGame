@@ -47,7 +47,7 @@ var spell
 var maxspell = 0
 var next_anim
 var offhand
-var maxoffhand = 3
+var maxoffhand = 2
 var cooldown = 0
 
 var cyan_cooldown = 85
@@ -121,53 +121,28 @@ func _process(delta):
 	#we need truespeed in order to sprint - this should get refactored
 	truespeed = SPEED
 	
-	if has_green == true:
-		maxspell = 1
-	if has_red == true:
-		maxspell = 2
-	if has_yellow == true:
-		maxoffhand = 1
-	if has_cyan == true:
-		maxoffhand = 2
-	if has_black == true:
-		maxoffhand = 3
+#	if has_green == true:
+#		maxspell = 1
+#	if has_red == true:
+#		maxspell = 2
+#	if has_yellow == true:
+#		maxoffhand = 1
+#	if has_cyan == true:
+#		maxoffhand = 2
+#	if has_black == true:
+#		maxoffhand = 3
 
 
-	if magenta_cooldown < magenta_cooltime:
-		magenta_cooldown += 1
-		if curr_offhand == 0:
-			can_cast = false
-	else:
-		if curr_offhand == 0:
-			can_cast = true
-	if yellow_cooldown < yellow_cooltime:
-		yellow_cooldown += 1
-		if curr_offhand == 1:
-			can_cast = false
-	else:
-		if curr_offhand == 1:
-			can_cast = true
-	if cyan_cooldown < cyan_cooltime:
-		cyan_cooldown += 1
-		if curr_offhand == 2:
-			can_cast = false
-	else:
-		if curr_offhand == 2:
-			can_cast = true
-	if black_cooldown < black_cooltime:
-		black_cooldown += 1
-		if curr_offhand == 3:
-			can_cast = false
-	else:
-		if curr_offhand == 3:
-			can_cast = true
+	calc_cancast()
 
 
 	if Input.is_action_just_pressed("switch_action"):
 		if curr_offhand < maxoffhand:
 			curr_offhand += 1
+			swap_offhand()
 		else:
 			curr_offhand = 0
+			swap_offhand()
 
 
 	if Input.is_action_just_pressed("switch_weapon"):
@@ -298,19 +273,24 @@ func restart():
 func cast():
 	if !can_cast:
 		return
-	match curr_spell:
+	match curr_offhand:
 		0:
 			magenta_cooldown = 0
-			#offhand_sprite.play("healcast")
+			offhand_sprite.play("healcast")
+			print("CAST HEAL")
 		1:
 			yellow_cooldown = 0
-			#offhand_sprite.play("shieldcast")
+			offhand_sprite.play("shieldcast")
+			print("CAST SHIELD")
 		2:
 			cyan_cooldown = 0
-			#offhand_sprite.play("forcecast")
+			offhand_sprite.play("forcecast")
+			print("CAST FORCE")
 		3:
 			black_cooldown = 0
-			#offhand_sprite.play("oncooldown")
+			offhand_sprite.play("oncooldown")
+			print("BUNGUS")
+	offhand_sprite.state = "cast"
 
 
 func shoot():
@@ -409,7 +389,6 @@ func blast_shot():
 	spell.position = blast_pos.global_position
 	spell.transform.basis = global_transform.basis
 	get_parent().add_child(spell)
-	
 
 
 func swap_weapon():
@@ -421,9 +400,52 @@ func swap_weapon():
 				animated_sprite_2d.play("hex idle")
 			2:
 				animated_sprite_2d.play("blast idle")
-				
+
 func swap_offhand():
-	pass
+	calc_cancast()
+	if can_cast == true:
+		match curr_offhand:
+			0:
+				offhand_sprite.play("healidle")
+			1:
+				offhand_sprite.play("shieldidle")
+			2:
+				offhand_sprite.play("forceidle")
+			3:
+				offhand_sprite.play("oncooldown")
+	else:
+		offhand_sprite.play("oncooldown")
+
+
+func calc_cancast():
+	if magenta_cooldown < magenta_cooltime:
+		magenta_cooldown += 1
+		if curr_offhand == 0:
+			can_cast = false
+	else:
+		if curr_offhand == 0:
+			can_cast = true
+	if yellow_cooldown < yellow_cooltime:
+		yellow_cooldown += 1
+		if curr_offhand == 1:
+			can_cast = false
+	else:
+		if curr_offhand == 1:
+			can_cast = true
+	if cyan_cooldown < cyan_cooltime:
+		cyan_cooldown += 1
+		if curr_offhand == 2:
+			can_cast = false
+	else:
+		if curr_offhand == 2:
+			can_cast = true
+	if black_cooldown < black_cooltime:
+		black_cooldown += 1
+		if curr_offhand == 3:
+			can_cast = false
+	else:
+		if curr_offhand == 3:
+			can_cast = true
 
 func update_ui(): #UI Logic
 	var uitext = "HP: " + str(hp) + " MANA: " + str(floor(mana))

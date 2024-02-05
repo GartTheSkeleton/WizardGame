@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://1gt7plt0khlc"]
+[gd_scene load_steps=28 format=3 uid="uid://1gt7plt0khlc"]
 
 [ext_resource type="PackedScene" uid="uid://dcuojvu0lprmv" path="res://Assets/Meshes/wall2by6.tscn" id="1_7168o"]
 [ext_resource type="PackedScene" uid="uid://csi3alld4th8e" path="res://Assets/Meshes/castle_window.tscn" id="2_8qler"]
@@ -16,7 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://b1k0ped0mo44l" path="res://Assets/Meshes/grass01.tscn" id="14_5hr87"]
 [ext_resource type="PackedScene" uid="uid://duxnm5wql46qr" path="res://window.tscn" id="15_wtevc"]
 [ext_resource type="PackedScene" uid="uid://dc51l1g41i3m5" path="res://Assets/Meshes/door.tscn" id="16_6bccy"]
+[ext_resource type="Texture2D" uid="uid://br0p8wcwlwkp0" path="res://Assets/Images/stair.png" id="17_ymwar"]
 [ext_resource type="PackedScene" uid="uid://hrx3uw53fs1" path="res://powerup.tscn" id="18_ldnq0"]
+[ext_resource type="Texture2D" uid="uid://3j61fh85ktvv" path="res://Assets/Images/stair_top.png" id="18_mtge1"]
 [ext_resource type="PackedScene" uid="uid://dpnhioiln3ts4" path="res://Assets/Meshes/crate.tscn" id="19_hctbt"]
 [ext_resource type="PackedScene" uid="uid://b3dlkb0ynm47w" path="res://Assets/Meshes/floor03-2by2.tscn" id="19_k6xt5"]
 
@@ -27,6 +29,17 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uifo3"]
 albedo_texture = ExtResource("5_8iqrs")
 uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ondn3"]
+albedo_texture = ExtResource("17_ymwar")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_l1rpr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxakv"]
+albedo_texture = ExtResource("17_ymwar")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nt1ii"]
+albedo_texture = ExtResource("18_mtge1")
 
 [node name="Node3D" type="Node3D"]
 
@@ -6620,6 +6633,21 @@ skeleton = NodePath("../../..")
 
 [node name="Node3D1291" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -15, -54)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Environment"]
+transform = Transform3D(1.73205, 0.5, 0, -1, 0.866025, 0, 0, 0, 2, 5.61382, 13.043, -37)
+material_override = SubResource("StandardMaterial3D_ondn3")
+mesh = SubResource("PlaneMesh_l1rpr")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/Environment"]
+transform = Transform3D(1.73205, 0.5, 0, -1, 0.866025, 0, 0, 0, 2, 2.13322, 15.043, -37)
+material_override = SubResource("StandardMaterial3D_lxakv")
+mesh = SubResource("PlaneMesh_l1rpr")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/Environment"]
+transform = Transform3D(1.73205, 0.5, 0, -1, 0.866025, 0, 0, 0, 2, -1.30153, 17.043, -37)
+material_override = SubResource("StandardMaterial3D_nt1ii")
+mesh = SubResource("PlaneMesh_l1rpr")
 
 [node name="Door" parent="." instance=ExtResource("16_6bccy")]
 transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -34, 0, -15)

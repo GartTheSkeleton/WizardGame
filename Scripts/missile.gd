@@ -53,8 +53,8 @@ func _physics_process(delta):
 			
 			if ray.get_collider().is_in_group(target_type):
 				animated_sprite.play("pop")
-				print(damage)
-				print(ray.get_collider().hp)
+				#print(damage)
+				#print(ray.get_collider().hp)
 				dead = true
 				
 				if ray.get_collider().has_method("kill"):

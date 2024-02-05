@@ -32,7 +32,7 @@ func attack_player():
 	
 	if ai_state == "attacking":
 		#look_at(player.global_position)
-		print(global_rotation)
+		#print(global_rotation)
 		if attacked == false:	
 			if cooldown <= 0:
 				cooldown = my_cooldown
