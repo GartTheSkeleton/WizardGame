@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://1gt7plt0khlc"]
+[gd_scene load_steps=29 format=3 uid="uid://1gt7plt0khlc"]
 
 [ext_resource type="PackedScene" uid="uid://dcuojvu0lprmv" path="res://Assets/Meshes/wall2by6.tscn" id="1_7168o"]
 [ext_resource type="PackedScene" uid="uid://csi3alld4th8e" path="res://Assets/Meshes/castle_window.tscn" id="2_8qler"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b1k0ped0mo44l" path="res://Assets/Meshes/grass01.tscn" id="14_5hr87"]
 [ext_resource type="PackedScene" uid="uid://duxnm5wql46qr" path="res://window.tscn" id="15_wtevc"]
 [ext_resource type="PackedScene" uid="uid://dc51l1g41i3m5" path="res://Assets/Meshes/door.tscn" id="16_6bccy"]
+[ext_resource type="PackedScene" uid="uid://bk3wn33qk76jo" path="res://stairface.tscn" id="17_ceoq2"]
 [ext_resource type="Texture2D" uid="uid://br0p8wcwlwkp0" path="res://Assets/Images/stair.png" id="17_ymwar"]
 [ext_resource type="PackedScene" uid="uid://hrx3uw53fs1" path="res://powerup.tscn" id="18_ldnq0"]
 [ext_resource type="Texture2D" uid="uid://3j61fh85ktvv" path="res://Assets/Images/stair_top.png" id="18_mtge1"]
@@ -571,7 +572,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -2, -34)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, -2, -34)
 
 [node name="Node3D942" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 10, -43)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 10, -109)
 
 [node name="Node3D943" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 9.5, 10, -40.7)
@@ -601,25 +602,25 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 22,
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 22, -29)
 
 [node name="Node3D1309" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 22, -45)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 22, -111)
 
 [node name="Node3D1310" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 22, -45)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 22, -111)
 
 [node name="Node3D1311" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 22, -45)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 22, -111)
 
 [node name="Node3D1316" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6, 22, -45)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6, 22, -111)
 
 [node name="Node3D1304" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6, 22, -29)
 
 [node name="Node3D957" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 10, -45)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 10, -111)
 
 [node name="Node3D958" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 10, -45)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 10, -111)
 
 [node name="Node3D972" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, -2, -43)
@@ -5775,27 +5776,27 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 30, 11, -33)
 skeleton = NodePath("../../..")
 
 [node name="Cube385" parent="NavigationRegion3D/Environment" instance=ExtResource("4_yv03t")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5, 13, -44)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5, 13, -110)
 skeleton = NodePath("../../..")
 
 [node name="Cube386" parent="NavigationRegion3D/Environment" instance=ExtResource("4_yv03t")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5, 15, -44)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5, 15, -110)
 skeleton = NodePath("../../..")
 
 [node name="Cube387" parent="NavigationRegion3D/Environment" instance=ExtResource("4_yv03t")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5, 17, -44)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5, 17, -110)
 skeleton = NodePath("../../..")
 
 [node name="Cube388" parent="NavigationRegion3D/Environment" instance=ExtResource("4_yv03t")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5, 19, -44)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5, 19, -110)
 skeleton = NodePath("../../..")
 
 [node name="Cube389" parent="NavigationRegion3D/Environment" instance=ExtResource("4_yv03t")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5, 21, -44)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5, 21, -110)
 skeleton = NodePath("../../..")
 
 [node name="Cube390" parent="NavigationRegion3D/Environment" instance=ExtResource("13_hfk6l")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5, 11, -44)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5, 11, -110)
 skeleton = NodePath("../../..")
 
 [node name="Cube463" parent="NavigationRegion3D/Environment" instance=ExtResource("4_yv03t")]
@@ -5966,11 +5967,11 @@ transform = Transform3D(-12.1244, 0.5, -3.49691e-07, 7, 0.866026, 0, 1.05994e-06
 skeleton = NodePath("../../..")
 
 [node name="Cube601" parent="NavigationRegion3D/Environment" instance=ExtResource("7_ms81n")]
-transform = Transform3D(-12.1244, 0.5, -3.49691e-07, 7, 0.866026, 0, 1.05994e-06, -4.37114e-08, -4, 2.84702, 14.0489, -37)
+transform = Transform3D(-12.1244, 0.5, -3.49691e-07, 7, 0.866026, 0, 1.05994e-06, -4.37114e-08, -4, 3, 14, -37)
 skeleton = NodePath("../../..")
 
 [node name="Cube610" parent="NavigationRegion3D/Environment" instance=ExtResource("7_ms81n")]
-transform = Transform3D(-12.1244, 0.5, -3.49691e-07, 7, 0.866026, 0, 1.05994e-06, -4.37114e-08, -4, 2.84702, 25.8076, -37)
+transform = Transform3D(-12.1244, 0.5, -3.49691e-07, 7, 0.866026, 0, 1.05994e-06, -4.37114e-08, -4, 3, 26, -37)
 skeleton = NodePath("../../..")
 
 [node name="Cube510" parent="NavigationRegion3D/Environment" instance=ExtResource("7_ms81n")]
@@ -5978,7 +5979,7 @@ transform = Transform3D(-12.1244, 0.5, -3.49691e-07, 7, 0.866026, 0, 1.05994e-06
 skeleton = NodePath("../../..")
 
 [node name="Node3D179" parent="NavigationRegion3D/Environment" instance=ExtResource("6_bsoxb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, -33)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4, -33)
 
 [node name="Node3D180" parent="NavigationRegion3D/Environment" instance=ExtResource("6_bsoxb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -2, -37)
@@ -5987,7 +5988,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -2, -37)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -2, -33)
 
 [node name="Node3D182" parent="NavigationRegion3D/Environment" instance=ExtResource("6_bsoxb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 3, -37)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4, -37)
 
 [node name="Node3D1299" parent="NavigationRegion3D/Environment" instance=ExtResource("6_bsoxb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 16, -33)
@@ -5996,11 +5997,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 16, -33)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 16, -37)
 
 [node name="Cube609" parent="NavigationRegion3D/Environment" instance=ExtResource("7_ms81n")]
-transform = Transform3D(12.1244, -0.5, 6.99382e-07, 7, 0.866026, 0, -2.11989e-06, 8.74228e-08, 4, 1.1553, 20.0717, -33)
+transform = Transform3D(12.1244, -0.5, 6.99382e-07, 7, 0.866026, 0, -2.11989e-06, 8.74228e-08, 4, 1, 20, -33)
 skeleton = NodePath("../../..")
 
 [node name="Cube611" parent="NavigationRegion3D/Environment" instance=ExtResource("7_ms81n")]
-transform = Transform3D(12.1244, -0.5, 6.99382e-07, 7, 0.866026, 0, -2.11989e-06, 8.74228e-08, 4, 1.15825, 32.0324, -33)
+transform = Transform3D(12.1244, -0.5, 6.99382e-07, 7, 0.866026, 0, -2.11989e-06, 8.74228e-08, 4, 1, 32, -33)
 skeleton = NodePath("../../..")
 
 [node name="Node3D1321" parent="NavigationRegion3D/Environment" instance=ExtResource("6_bsoxb")]
@@ -6627,6 +6628,9 @@ skeleton = NodePath("../../..")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3, -2, -56.8268)
 skeleton = NodePath("../../..")
 
+[node name="Node3D" parent="NavigationRegion3D/Environment" instance=ExtResource("17_ceoq2")]
+transform = Transform3D(1.73205, 1, 0, -1, 1.73205, 0, 0, 0, 2, 2.31553, 15, -37)
+
 [node name="Cube608" parent="NavigationRegion3D/Environment" instance=ExtResource("11_2tjdu")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3, -2, -68.8268)
 skeleton = NodePath("../../..")
@@ -6634,18 +6638,18 @@ skeleton = NodePath("../../..")
 [node name="Node3D1291" parent="NavigationRegion3D/Environment" instance=ExtResource("1_7168o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, -15, -54)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Environment"]
-transform = Transform3D(1.73205, 0.5, 0, -1, 0.866025, 0, 0, 0, 2, 5.61382, 13.043, -37)
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="NavigationRegion3D/Environment"]
+transform = Transform3D(-1.73205, -0.5, -1.74846e-07, -1, 0.866025, 0, 1.51421e-07, 4.37114e-08, -2, -1.73545, 19.0059, -33.0086)
 material_override = SubResource("StandardMaterial3D_ondn3")
 mesh = SubResource("PlaneMesh_l1rpr")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/Environment"]
-transform = Transform3D(1.73205, 0.5, 0, -1, 0.866025, 0, 0, 0, 2, 2.13322, 15.043, -37)
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="NavigationRegion3D/Environment"]
+transform = Transform3D(-1.73205, -0.5, -1.74846e-07, -1, 0.866025, 0, 1.51421e-07, 4.37114e-08, -2, 1.74515, 21.0192, -33.0086)
 material_override = SubResource("StandardMaterial3D_lxakv")
 mesh = SubResource("PlaneMesh_l1rpr")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/Environment"]
-transform = Transform3D(1.73205, 0.5, 0, -1, 0.866025, 0, 0, 0, 2, -1.30153, 17.043, -37)
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="NavigationRegion3D/Environment"]
+transform = Transform3D(-1.73205, -0.5, -1.74846e-07, -1, 0.866025, 0, 1.51421e-07, 4.37114e-08, -2, 5.2648, 23.0342, -33.0086)
 material_override = SubResource("StandardMaterial3D_nt1ii")
 mesh = SubResource("PlaneMesh_l1rpr")
 
