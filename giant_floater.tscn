@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://dlkueipxrdaov"]
+[gd_scene load_steps=22 format=3 uid="uid://dlkueipxrdaov"]
 
 [ext_resource type="Script" path="res://Scripts/giant_floater.gd" id="1_mvwcg"]
-[ext_resource type="Texture2D" uid="uid://np81j02b7kvi" path="res://Assets/Images/giant_floater_attack.png" id="2_kubb5"]
+[ext_resource type="Texture2D" uid="uid://dftuw75i24ivk" path="res://Assets/Images/giant_floater_attack.png" id="2_kubb5"]
 [ext_resource type="AudioStream" uid="uid://qxfjnbqrobwf" path="res://Audio/monster_die.wav" id="3_20sp7"]
 [ext_resource type="Texture2D" uid="uid://cjx76b3rwsl42" path="res://Assets/Images/giant_floater.png" id="3_dopi8"]
 [ext_resource type="Texture2D" uid="uid://beyl7tbhgl2dy" path="res://Assets/Images/giant_floater_dead.png" id="3_jhifh"]
@@ -28,9 +28,17 @@ region = Rect2(0, 1280, 1536, 1280)
 atlas = ExtResource("2_kubb5")
 region = Rect2(1536, 1280, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xihvd"]
-atlas = ExtResource("2_kubb5")
-region = Rect2(3072, 1280, 1536, 1280)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nelyp"]
+atlas = ExtResource("3_dopi8")
+region = Rect2(0, 2560, 1536, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwqyr"]
+atlas = ExtResource("3_dopi8")
+region = Rect2(1536, 2560, 1536, 1280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5rs2"]
+atlas = ExtResource("3_dopi8")
+region = Rect2(3072, 2560, 1536, 1280)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_msjpn"]
 atlas = ExtResource("3_dopi8")
@@ -88,7 +96,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xihvd")
+"texture": SubResource("AtlasTexture_nelyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwqyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5rs2")
 }],
 "loop": false,
 "name": &"hurt",
@@ -133,8 +147,10 @@ pixel_size = 0.009
 billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_u8br5")
-animation = &"attacking"
+animation = &"hurt"
 autoplay = "idle"
+frame = 2
+frame_progress = 1.0
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_20sp7")

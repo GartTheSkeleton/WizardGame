@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://c148d14s7v1ey"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_drnhs"]
-[ext_resource type="Texture2D" uid="uid://np81j02b7kvi" path="res://Assets/Images/giant_floater_attack.png" id="2_ewwlr"]
+[ext_resource type="Texture2D" uid="uid://dftuw75i24ivk" path="res://Assets/Images/giant_floater_attack.png" id="2_ewwlr"]
 [ext_resource type="Texture2D" uid="uid://beyl7tbhgl2dy" path="res://Assets/Images/giant_floater_dead.png" id="3_6w2g6"]
 [ext_resource type="AudioStream" uid="uid://qxfjnbqrobwf" path="res://Audio/monster_die.wav" id="3_ldeo6"]
 [ext_resource type="Texture2D" uid="uid://cjx76b3rwsl42" path="res://Assets/Images/giant_floater.png" id="3_n2y23"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dftuw75i24ivk"
-path="res://.godot/imported/giant_floater_attack.png-4b69d25a2c35afc580d4f16630873498.ctex"
+uid="uid://brg5hetjc2c2y"
+path="res://.godot/imported/giant_floater.png-3e85014ea40e9ce40b6c341b9e79850f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://giant_floater_attack.png"
-dest_files=["res://.godot/imported/giant_floater_attack.png-4b69d25a2c35afc580d4f16630873498.ctex"]
+source_file="res://Assets/giant_floater.png"
+dest_files=["res://.godot/imported/giant_floater.png-3e85014ea40e9ce40b6c341b9e79850f.ctex"]
 
 [params]
 
