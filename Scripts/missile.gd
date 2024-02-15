@@ -61,6 +61,7 @@ func _physics_process(delta):
 					if ray.get_collider().hp > 0:
 						ray.get_collider().hp -= damage
 						ray.get_collider().hurt = true
+						
 						ray.get_collider().hurt_timer = ray.get_collider().hurt_time
 						ray.get_collider().dir = ray.get_collider().global_position - global_position
 						ray.get_collider().dir.y = 0.0

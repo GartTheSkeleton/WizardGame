@@ -86,7 +86,7 @@ func _physics_process(delta):
 	navmesh.target_position = player.global_position
 	
 	if hurt == true:
-		print("I, AN ENEMY, HAVE BEEN HURT")
+		print("HURT")
 		animated_sprite_3d.play("hurt")
 		dir = dir.normalized()
 		velocity = dir * move_speed
@@ -94,6 +94,8 @@ func _physics_process(delta):
 		hurt_timer -= 1
 		if hurt_timer <= 0:
 			hurt = false
+			hurt_timer = hurt_time
+			ai_state = "hurt"
 	else: if active == true:
 		
 #		dir = player.global_position - global_position
@@ -153,6 +155,7 @@ func kill():
 
 func anim_done():
 	if !dead:
+		
 		animated_sprite_3d.play("idle")
 		ai_state = "idle"
 		cooldown = my_cooldown

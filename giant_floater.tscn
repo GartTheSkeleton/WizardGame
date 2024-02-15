@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://dlkueipxrdaov"]
+[gd_scene load_steps=23 format=3 uid="uid://dlkueipxrdaov"]
 
 [ext_resource type="Script" path="res://Scripts/giant_floater.gd" id="1_mvwcg"]
 [ext_resource type="Texture2D" uid="uid://dftuw75i24ivk" path="res://Assets/Images/giant_floater_attack.png" id="2_kubb5"]
 [ext_resource type="AudioStream" uid="uid://qxfjnbqrobwf" path="res://Audio/monster_die.wav" id="3_20sp7"]
 [ext_resource type="Texture2D" uid="uid://cjx76b3rwsl42" path="res://Assets/Images/giant_floater.png" id="3_dopi8"]
 [ext_resource type="Texture2D" uid="uid://beyl7tbhgl2dy" path="res://Assets/Images/giant_floater_dead.png" id="3_jhifh"]
+[ext_resource type="Texture2D" uid="uid://dtlhguruvlc6" path="res://Assets/Images/giant_floater_idle.png" id="5_cpgm6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_afoyd"]
 
@@ -40,28 +41,28 @@ region = Rect2(1536, 2560, 1536, 1280)
 atlas = ExtResource("3_dopi8")
 region = Rect2(3072, 2560, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_msjpn"]
-atlas = ExtResource("3_dopi8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fshr"]
+atlas = ExtResource("5_cpgm6")
 region = Rect2(0, 0, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_612rl"]
-atlas = ExtResource("3_dopi8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpjhm"]
+atlas = ExtResource("5_cpgm6")
 region = Rect2(1536, 0, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1pxvi"]
-atlas = ExtResource("3_dopi8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_egr3n"]
+atlas = ExtResource("5_cpgm6")
 region = Rect2(3072, 0, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sbi17"]
-atlas = ExtResource("3_dopi8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_npktt"]
+atlas = ExtResource("5_cpgm6")
 region = Rect2(0, 1280, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jacuv"]
-atlas = ExtResource("3_dopi8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_54d3d"]
+atlas = ExtResource("5_cpgm6")
 region = Rect2(1536, 1280, 1536, 1280)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6h7ld"]
-atlas = ExtResource("3_dopi8")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l2eu"]
+atlas = ExtResource("5_cpgm6")
 region = Rect2(3072, 1280, 1536, 1280)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_u8br5"]
@@ -103,6 +104,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_c5rs2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nelyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5rs2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5rs2")
 }],
 "loop": false,
 "name": &"hurt",
@@ -110,22 +120,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_msjpn")
+"texture": SubResource("AtlasTexture_4fshr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_612rl")
+"texture": SubResource("AtlasTexture_xpjhm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1pxvi")
+"texture": SubResource("AtlasTexture_egr3n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sbi17")
+"texture": SubResource("AtlasTexture_npktt")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jacuv")
+"texture": SubResource("AtlasTexture_54d3d")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6h7ld")
+"texture": SubResource("AtlasTexture_6l2eu")
 }],
 "loop": true,
 "name": &"idle",
@@ -147,10 +157,8 @@ pixel_size = 0.009
 billboard = 2
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_u8br5")
-animation = &"hurt"
+animation = &"idle"
 autoplay = "idle"
-frame = 2
-frame_progress = 1.0
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_20sp7")

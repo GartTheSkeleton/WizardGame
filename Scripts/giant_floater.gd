@@ -11,11 +11,12 @@ var arcane_missile = preload("res://missile.tscn")
 @onready var RightMid = $Head/RightMid
 @onready var RightHigh = $Head/RightHigh
 
-var hurttime = 6
+
 var spell
 
 func  _ready():
 	super()
+	hurt_time = 30
 	type = 1
 	aggro_radius = 50
 	move_speed = 4
