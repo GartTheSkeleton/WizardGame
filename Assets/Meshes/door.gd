@@ -53,7 +53,7 @@ func _ready():
 func _process(delta):
 	var dist_to_player = global_position.distance_to(player.global_position)
 	
-	if dist_to_player <= 4:
+	if dist_to_player <= 8:
 		if type == 0:
 			open = true
 			#lock_sprite1.visible = false

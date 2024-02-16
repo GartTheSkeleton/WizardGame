@@ -1,0 +1,263 @@
+[gd_scene load_steps=6 format=3 uid="uid://qwhufhs7631h"]
+
+[ext_resource type="Script" path="res://elevator.gd" id="1_kaku1"]
+[ext_resource type="Texture2D" uid="uid://dk3ioed65x32c" path="res://Assets/Images/floor03.png" id="2_olsbf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3n3tm"]
+albedo_texture = ExtResource("2_olsbf")
+uv1_scale = Vector3(3, 2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jpspu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qlql3"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_kaku1")
+
+[node name="DaCube" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -1, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -1, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube3" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -1, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube5" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -3, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube6" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -3, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube7" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -3, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube4" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -3, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube15" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -1, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube16" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -7, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube8" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -5, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube9" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -5, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube10" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -5, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube11" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -7, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube12" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -7, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube13" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -7, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube14" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -5, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube17" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -9, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube18" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -9, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube19" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -9, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube20" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -11, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube21" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -11, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube22" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -11, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube23" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -11, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube24" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -9, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube25" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -15, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube26" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -13, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube27" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -13, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube28" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -13, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube29" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -15, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube30" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -15, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube31" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -15, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube32" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -13, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube33" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -17, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube34" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -17, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube35" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -17, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube36" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -19, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube37" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -19, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube38" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -19, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube39" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -19, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube40" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -17, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube41" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -23, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube42" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -21, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube43" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -21, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube44" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -21, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube45" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -23, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube46" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -23, -1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube47" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1, -23, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="DaCube48" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -1, -21, 1)
+material_override = SubResource("StandardMaterial3D_3n3tm")
+mesh = SubResource("BoxMesh_jpspu")
+
+[node name="Area3D" type="MeshInstance3D" parent="."]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/StaticBody3D"]
+transform = Transform3D(4, 0, 0, 0, 25, 0, 0, 0, 4, 0, -12.5, 0)
+shape = SubResource("BoxShape3D_qlql3")

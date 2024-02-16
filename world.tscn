@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://potr8w0bcnms"]
+[gd_scene load_steps=8 format=3 uid="uid://potr8w0bcnms"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_jtd37"]
 [ext_resource type="PackedScene" uid="uid://2go8h24o332j" path="res://player.tscn" id="1_n0l67"]
 [ext_resource type="PackedScene" uid="uid://caadawojui2bv" path="res://spider.tscn" id="4_5wdyw"]
 [ext_resource type="PackedScene" uid="uid://dlkueipxrdaov" path="res://giant_floater.tscn" id="4_r1vim"]
 [ext_resource type="PackedScene" uid="uid://lda1fr4p262a" path="res://caster.tscn" id="5_5ug7t"]
+[ext_resource type="PackedScene" uid="uid://qwhufhs7631h" path="res://elevator.tscn" id="6_m8e0m"]
 
 [sub_resource type="Environment" id="Environment_2bx7j"]
 background_mode = 1
@@ -33,3 +34,6 @@ transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -12, 1, 4)
 
 [node name="Caster" parent="." instance=ExtResource("5_5ug7t")]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -23, 0, 2)
+
+[node name="Node3D3" parent="." instance=ExtResource("6_m8e0m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6, 13)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5pahymgfgpfd"]
+
+[ext_resource type="Texture2D" uid="uid://dsrhg4mff4td2" path="res://Assets/Images/stairrail2.png" id="1_r2i0p"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2w2w3"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.25, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0)
+visible = false
+mesh = SubResource("PlaneMesh_2w2w3")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_r2i0p")
