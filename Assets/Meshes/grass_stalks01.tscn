@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqappiilo7sx3"]
+
+[ext_resource type="Texture2D" uid="uid://cv2udk38wqmx" path="res://Assets/Images/grass stalks.png" id="1_1lqbp"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Node3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+billboard = 2
+texture = ExtResource("1_1lqbp")
