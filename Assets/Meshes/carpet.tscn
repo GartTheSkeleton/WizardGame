@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1i3bbifueptw"]
+
+[ext_resource type="Texture2D" uid="uid://en20gi3gam3i" path="res://Assets/Images/carpet_center.png" id="1_bo4kq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1wdc"]
+albedo_texture = ExtResource("1_bo4kq")
+
+[sub_resource type="BoxMesh" id="BoxMesh_iiith"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_k1wdc")
+mesh = SubResource("BoxMesh_iiith")
